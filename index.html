@@ -28,10 +28,6 @@ background: #f5f5f5;
 color: #111;
 }
 
-a {
-color: inherit;
-}
-
 .topbar {
 background: #050505;
 color: white;
@@ -347,6 +343,7 @@ line-height: 1.45;
 .image-credit a {
 color: #666;
 text-decoration: underline;
+cursor: pointer;
 }
 
 .image-credit a:hover {
@@ -474,6 +471,12 @@ color: #777;
 line-height: 1.5;
 }
 
+.article-credit a {
+color: #666;
+text-decoration: underline;
+cursor: pointer;
+}
+
 .article-content {
 max-width: 850px;
 margin: auto;
@@ -512,6 +515,12 @@ font-size: 12px;
 color: #666;
 line-height: 1.6;
 margin-bottom: 10px;
+}
+
+.credits-section a {
+color: #555;
+text-decoration: underline;
+cursor: pointer;
 }
 
 footer {
@@ -621,14 +630,29 @@ height: 300px;
 
 <header class="header">
 <nav class="nav">
-<div class="logo" onclick="volverInicio()">MIN<span>45</span></div>
+
+<div class="logo" onclick="volverInicio()">
+MIN<span>45</span>
+</div>
 
 <ul class="menu">
-<li><a href="#" onclick="volverInicio(); return false;">Inicio</a></li>
-<li><a href="#noticias">Noticias</a></li>
-<li><a href="#categorias">Categorías</a></li>
-<li><a href="#creditos">Créditos</a></li>
+<li>
+<a href="#" onclick="volverInicio(); return false;">Inicio</a>
+</li>
+
+<li>
+<a href="#noticias">Noticias</a>
+</li>
+
+<li>
+<a href="#categorias">Categorías</a>
+</li>
+
+<li>
+<a href="#creditos">Créditos</a>
+</li>
 </ul>
+
 </nav>
 </header>
 
@@ -648,23 +672,36 @@ height: 300px;
 <div class="news-grid" id="newsGrid"></div>
 
 <section class="feature">
+
 <div class="feature-image">
 <img
 src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ballon_d%27Or.png"
-alt="Balón de Oro">
+alt="Balón de Oro"
+>
 </div>
 
 <div class="feature-content">
+
 <span class="category">ESPECIAL</span>
-<h2>Todo sobre el Balón de Oro 2026</h2>
+
+<h2>
+Todo sobre el Balón de Oro 2026
+</h2>
+
 <p>
-Los grandes nombres del fútbol mundial vuelven a competir por uno
-de los premios individuales más importantes del deporte.
+Los grandes nombres del fútbol mundial vuelven a competir por
+uno de los premios individuales más importantes del deporte.
 </p>
-<span class="read-more" onclick="abrirNoticia('balon-oro-2026')">
+
+<span
+class="read-more"
+onclick="abrirNoticia('balon-oro-2026')"
+>
 Leer especial →
 </span>
+
 </div>
+
 </section>
 
 <div class="section-title" id="categorias">
@@ -672,26 +709,68 @@ Leer especial →
 </div>
 
 <div class="categories">
-<div class="category-box" onclick="filtrarCategoria('BARÇA')">BARÇA</div>
-<div class="category-box" onclick="filtrarCategoria('REAL MADRID')">REAL MADRID</div>
-<div class="category-box" onclick="filtrarCategoria('LALIGA')">LALIGA</div>
-<div class="category-box" onclick="filtrarCategoria('FICHAJES')">FICHAJES</div>
-<div class="category-box" onclick="filtrarCategoria('INTERNACIONAL')">EUROPA</div>
+
+<div
+class="category-box"
+onclick="filtrarCategoria('BARÇA')"
+>
+BARÇA
+</div>
+
+<div
+class="category-box"
+onclick="filtrarCategoria('REAL MADRID')"
+>
+REAL MADRID
+</div>
+
+<div
+class="category-box"
+onclick="filtrarCategoria('LALIGA')"
+>
+LALIGA
+</div>
+
+<div
+class="category-box"
+onclick="filtrarCategoria('FICHAJES')"
+>
+FICHAJES
+</div>
+
+<div
+class="category-box"
+onclick="filtrarCategoria('INTERNACIONAL')"
+>
+EUROPA
+</div>
+
 </div>
 
 <section class="credits-section" id="creditos">
+
 <h2>Créditos de imágenes</h2>
+
 <p>
-Las imágenes utilizadas en MIN45 proceden de Wikimedia Commons y se
-utilizan respetando las licencias indicadas en cada caso.
+Las imágenes utilizadas en MIN45 proceden de Wikimedia Commons
+y se utilizan respetando las licencias indicadas en cada caso.
 </p>
 
 <div id="allCredits"></div>
+
 </section>
 
 <section id="articleView">
-<div class="back-button" onclick="volverInicio()">← Volver a noticias</div>
+
+<div
+class="back-button"
+onclick="volverInicio()"
+>
+← Volver a noticias
+</div>
+
 <div id="articleContainer"></div>
+
 </section>
 
 </main>
@@ -699,174 +778,334 @@ utilizan respetando las licencias indicadas en cada caso.
 </div>
 
 <footer>
+
 <div class="footer-inner">
+
 <div>
-<div class="footer-logo">MIN<span>45</span></div>
-<p>Actualidad, noticias y protagonistas del fútbol.</p>
+
+<div class="footer-logo">
+MIN<span>45</span>
+</div>
+
+<p>
+Actualidad, noticias y protagonistas del fútbol.
+</p>
+
 </div>
 
 <div>
+
 <p>© 2026 MIN45</p>
 <p>Contenido editorial original.</p>
+
 </div>
+
 </div>
+
 </footer>
 
 <script src="noticias.js"></script>
 
 <script>
+
 let slideActual = 0;
 let intervaloCarousel;
 
+/*
+* ABRIR ENLACE EXTERNO
+* Esto evita que el navegador trate el crédito
+* como una navegación interna de MIN45.
+*/
+function abrirEnlaceExterno(url) {
+
+window.open(
+url,
+"_blank",
+"noopener,noreferrer"
+);
+
+}
+
 function crearCredito(noticia) {
+
 return `
 <span>
 Foto: ${noticia.autor}
 — ${noticia.licencia}
 —
-<a href="${noticia.fuente}" target="_blank" rel="noopener noreferrer">
+
+<a
+href="javascript:void(0)"
+onclick="abrirEnlaceExterno('${noticia.fuente}')"
+>
 Wikimedia Commons
 </a>
+
 —
-<a href="${noticia.licenciaUrl}" target="_blank" rel="noopener noreferrer">
+
+<a
+href="javascript:void(0)"
+onclick="abrirEnlaceExterno('${noticia.licenciaUrl}')"
+>
 Ver licencia
 </a>
+
 </span>
 `;
+
 }
 
 function crearTarjeta(noticia) {
+
 return `
 <article class="card">
+
 <div class="card-image">
-<img src="${noticia.imagen}" alt="${noticia.titulo}" loading="lazy">
+
+<img
+src="${noticia.imagen}"
+alt="${noticia.titulo}"
+loading="lazy"
+>
+
 </div>
 
 <div class="card-body">
-<span class="category">${noticia.categoria}</span>
-<div class="card-date">${noticia.fecha}</div>
 
-<h3>${noticia.titulo}</h3>
+<span class="category">
+${noticia.categoria}
+</span>
 
-<p>${noticia.resumen}</p>
+<div class="card-date">
+${noticia.fecha}
+</div>
 
-<span class="read-more" onclick="abrirNoticia('${noticia.id}')">
+<h3>
+${noticia.titulo}
+</h3>
+
+<p>
+${noticia.resumen}
+</p>
+
+<span
+class="read-more"
+onclick="abrirNoticia('${noticia.id}')"
+>
 Leer noticia →
 </span>
+
 </div>
 
 <div class="image-credit">
 ${crearCredito(noticia)}
 </div>
+
 </article>
 `;
+
 }
 
 function renderNoticias(lista = noticias) {
-const grid = document.getElementById("newsGrid");
 
-grid.innerHTML = lista.map(crearTarjeta).join("");
+const grid =
+document.getElementById("newsGrid");
+
+grid.innerHTML =
+lista.map(crearTarjeta).join("");
+
 }
 
 function crearCarousel() {
-const carousel = document.getElementById("carousel");
 
-const destacadas = noticias.slice(0, 3);
+const carousel =
+document.getElementById("carousel");
+
+const destacadas =
+noticias.slice(0, 3);
 
 carousel.innerHTML = `
+
 ${destacadas.map((noticia, index) => `
-<div class="slide ${index === 0 ? "active" : ""}">
-<img src="${noticia.imagen}" alt="${noticia.titulo}">
+
+<div
+class="slide ${index === 0 ? "active" : ""}"
+>
+
+<img
+src="${noticia.imagen}"
+alt="${noticia.titulo}"
+>
 
 <div class="slide-content">
-<span class="category">${noticia.categoria}</span>
 
-<h1>${noticia.titulo}</h1>
+<span class="category">
+${noticia.categoria}
+</span>
 
-<p>${noticia.resumen}</p>
+<h1>
+${noticia.titulo}
+</h1>
+
+<p>
+${noticia.resumen}
+</p>
 
 <span
 class="read-more"
 onclick="abrirNoticia('${noticia.id}')"
-style="display:inline-block;margin-top:14px;"
+style="
+display:inline-block;
+margin-top:14px;
+color:white;
+"
 >
 Leer noticia →
 </span>
+
 </div>
+
 </div>
+
 `).join("")}
 
-<button class="carousel-btn carousel-prev" onclick="cambiarSlide(-1)">‹</button>
-<button class="carousel-btn carousel-next" onclick="cambiarSlide(1)">›</button>
+<button
+class="carousel-btn carousel-prev"
+onclick="cambiarSlide(-1)"
+>
+‹
+</button>
+
+<button
+class="carousel-btn carousel-next"
+onclick="cambiarSlide(1)"
+>
+›
+</button>
 
 <div class="dots">
+
 ${destacadas.map((_, index) => `
+
 <span
 class="dot ${index === 0 ? "active" : ""}"
 onclick="irSlide(${index})"
 ></span>
+
 `).join("")}
+
 </div>
+
 `;
 
 iniciarCarousel();
+
 }
 
 function mostrarSlide(numero) {
-const slides = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".dot");
+
+const slides =
+document.querySelectorAll(".slide");
+
+const dots =
+document.querySelectorAll(".dot");
 
 if (!slides.length) return;
 
-slideActual = (numero + slides.length) % slides.length;
+slideActual =
+(numero + slides.length) %
+slides.length;
 
 slides.forEach((slide, index) => {
-slide.classList.toggle("active", index === slideActual);
+
+slide.classList.toggle(
+"active",
+index === slideActual
+);
+
 });
 
 dots.forEach((dot, index) => {
-dot.classList.toggle("active", index === slideActual);
+
+dot.classList.toggle(
+"active",
+index === slideActual
+);
+
 });
+
 }
 
 function cambiarSlide(direccion) {
-mostrarSlide(slideActual + direccion);
+
+mostrarSlide(
+slideActual + direccion
+);
+
 reiniciarCarousel();
+
 }
 
 function irSlide(numero) {
+
 mostrarSlide(numero);
+
 reiniciarCarousel();
+
 }
 
 function iniciarCarousel() {
+
 clearInterval(intervaloCarousel);
 
-intervaloCarousel = setInterval(() => {
-mostrarSlide(slideActual + 1);
+intervaloCarousel =
+setInterval(() => {
+
+mostrarSlide(
+slideActual + 1
+);
+
 }, 6000);
+
 }
 
 function reiniciarCarousel() {
+
 iniciarCarousel();
+
 }
 
 function abrirNoticia(id) {
-const noticia = noticias.find(item => item.id === id);
+
+const noticia =
+noticias.find(
+item => item.id === id
+);
 
 if (!noticia) return;
 
-document.getElementById("home").style.display = "none";
+document.getElementById("home")
+.style.display = "none";
 
-const articleView = document.getElementById("articleView");
-articleView.style.display = "block";
+const articleView =
+document.getElementById("articleView");
 
-document.getElementById("articleContainer").innerHTML = `
+articleView.style.display =
+"block";
+
+document.getElementById(
+"articleContainer"
+).innerHTML = `
+
 <div class="article-header">
 
-<span class="category">${noticia.categoria}</span>
+<span class="category">
+${noticia.categoria}
+</span>
 
-<h1>${noticia.titulo}</h1>
+<h1>
+${noticia.titulo}
+</h1>
 
 <div class="article-meta">
 ${noticia.fecha}
@@ -875,82 +1114,133 @@ ${noticia.fecha}
 </div>
 
 <div class="article-image">
-<img src="${noticia.imagen}" alt="${noticia.titulo}">
+
+<img
+src="${noticia.imagen}"
+alt="${noticia.titulo}"
+>
+
 </div>
 
 <div class="article-credit">
+
 ${crearCredito(noticia)}
+
 </div>
 
 <div class="article-content">
+
 ${noticia.contenido}
+
 </div>
+
 `;
 
 window.scrollTo({
 top: 0,
 behavior: "smooth"
 });
+
 }
 
 function volverInicio() {
-document.getElementById("articleView").style.display = "none";
-document.getElementById("home").style.display = "block";
+
+document.getElementById(
+"articleView"
+).style.display = "none";
+
+document.getElementById(
+"home"
+).style.display = "block";
 
 window.scrollTo({
 top: 0,
 behavior: "smooth"
 });
+
 }
 
 function filtrarCategoria(categoria) {
-const filtradas = noticias.filter(
-noticia => noticia.categoria === categoria
+
+const filtradas =
+noticias.filter(
+noticia =>
+noticia.categoria === categoria
 );
 
-document.getElementById("noticias").scrollIntoView({
+document.getElementById(
+"noticias"
+).scrollIntoView({
 behavior: "smooth"
 });
 
 renderNoticias(filtradas);
+
 }
 
 function mostrarTodos() {
+
 renderNoticias(noticias);
+
 }
 
 function renderCreditos() {
-const container = document.getElementById("allCredits");
 
-container.innerHTML = noticias.map(noticia => `
+const container =
+document.getElementById(
+"allCredits"
+);
+
+container.innerHTML =
+noticias.map(noticia => `
+
 <p>
-<strong>${noticia.titulo}</strong><br>
-Foto: ${noticia.autor} —
-${noticia.licencia} —
+
+<strong>
+${noticia.titulo}
+</strong>
+
+<br>
+
+Foto:
+${noticia.autor}
+—
+${noticia.licencia}
+—
+
 <a
-href="${noticia.fuente}"
-target="_blank"
-rel="noopener noreferrer"
+href="javascript:void(0)"
+onclick="abrirEnlaceExterno('${noticia.fuente}')"
 >
 Página de la imagen en Wikimedia Commons
 </a>
+
 —
+
 <a
-href="${noticia.licenciaUrl}"
-target="_blank"
-rel="noopener noreferrer"
+href="javascript:void(0)"
+onclick="abrirEnlaceExterno('${noticia.licenciaUrl}')"
 >
 Licencia
 </a>
+
 </p>
+
 `).join("");
+
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+"DOMContentLoaded",
+() => {
+
 crearCarousel();
 renderNoticias();
 renderCreditos();
-});
+
+}
+);
+
 </script>
 
 </body>
