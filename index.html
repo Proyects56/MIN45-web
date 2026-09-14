@@ -991,261 +991,7 @@ El delantero francés marcó dos goles en el 4-1 del conjunto blanco.
 </div>
 
 
-<div class="news-grid">
 
-
-<!-- BARÇA -->
-
-<article class="news-card">
-
-<a href="#">
-
-<div class="news-image">
-
-<img
-src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=80"
-alt="Fútbol"
->
-
-<span class="news-tag">
-Barça
-</span>
-
-</div>
-
-
-<div class="news-content">
-
-<h3>
-El Barça sigue perfecto en LaLiga tras vencer al Levante
-</h3>
-
-<p>
-El equipo azulgrana volvió a ganar y mantiene el pleno de victorias después de cinco jornadas.
-</p>
-
-<span class="read-more">
-Leer noticia →
-</span>
-
-</div>
-
-</a>
-
-</article>
-
-
-
-<!-- MADRID -->
-
-<article class="news-card">
-
-<a href="#">
-
-<div class="news-image">
-
-<img
-src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=1000&q=80"
-alt="Fútbol"
->
-
-<span class="news-tag">
-Real Madrid
-</span>
-
-</div>
-
-
-<div class="news-content">
-
-<h3>
-Mbappé firma un doblete en el 4-1 del Madrid al Rayo
-</h3>
-
-<p>
-El francés volvió a ser protagonista con dos goles en la victoria del conjunto blanco.
-</p>
-
-<span class="read-more">
-Leer noticia →
-</span>
-
-</div>
-
-</a>
-
-</article>
-
-
-
-<!-- BALÓN DE ORO -->
-
-<article class="news-card">
-
-<a href="#">
-
-<div class="news-image">
-
-<img
-src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?auto=format&fit=crop&w=1000&q=80"
-alt="Estadio de fútbol"
->
-
-<span class="news-tag">
-Balón de Oro
-</span>
-
-</div>
-
-
-<div class="news-content">
-
-<h3>
-Ya se conocen los 30 nominados al Balón de Oro 2026
-</h3>
-
-<p>
-Lamine Yamal, Mbappé, Kane, Rodri y Messi están entre los candidatos al prestigioso premio.
-</p>
-
-<span class="read-more">
-Leer noticia →
-</span>
-
-</div>
-
-</a>
-
-</article>
-
-
-
-<!-- LALIGA -->
-
-<article class="news-card">
-
-<a href="#">
-
-<div class="news-image">
-
-<img
-src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1000&q=80"
-alt="Campo de fútbol"
->
-
-<span class="news-tag">
-LaLiga
-</span>
-
-</div>
-
-
-<div class="news-content">
-
-<h3>
-El Barça lidera LaLiga después de cinco jornadas
-</h3>
-
-<p>
-El conjunto azulgrana es el único equipo que mantiene el pleno de victorias.
-</p>
-
-<span class="read-more">
-Leer noticia →
-</span>
-
-</div>
-
-</a>
-
-</article>
-
-
-
-<!-- FICHAJES -->
-
-<article class="news-card">
-
-<a href="#">
-
-<div class="news-image">
-
-<img
-src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=80"
-alt="Fútbol"
->
-
-<span class="news-tag">
-Fichajes
-</span>
-
-</div>
-
-
-<div class="news-content">
-
-<h3>
-El mercado sigue siendo uno de los grandes focos del fútbol europeo
-</h3>
-
-<p>
-Los grandes clubes continúan planificando sus próximas operaciones.
-</p>
-
-<span class="read-more">
-Leer noticia →
-</span>
-
-</div>
-
-</a>
-
-</article>
-
-
-
-<!-- INTERNACIONAL -->
-
-<article class="news-card">
-
-<a href="#">
-
-<div class="news-image">
-
-<img
-src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1000&q=80"
-alt="Partido de fútbol"
->
-
-<span class="news-tag">
-Internacional
-</span>
-
-</div>
-
-
-<div class="news-content">
-
-<h3>
-Europa vuelve a mirar hacia sus grandes protagonistas
-</h3>
-
-<p>
-Los principales equipos afrontan una nueva semana cargada de fútbol.
-</p>
-
-<span class="read-more">
-Leer noticia →
-</span>
-
-</div>
-
-</a>
-
-</article>
-
-
-</div>
 
 </section>
 
@@ -1585,7 +1331,50 @@ nextSlide();
 }, 5500);
 
 </script>
+<script src="noticias.js"></script>
 
+<script>
+const newsGrid = document.getElementById("news-grid");
+
+function mostrarNoticias() {
+newsGrid.innerHTML = "";
+
+noticias.forEach((noticia) => {
+
+const tarjeta = document.createElement("article");
+
+tarjeta.className = "news-card";
+
+tarjeta.innerHTML = `
+<img src="${noticia.imagen}" alt="${noticia.titulo}">
+
+<div class="news-card-content">
+
+<span class="category">
+${noticia.categoria}
+</span>
+
+<h3>
+${noticia.titulo}
+</h3>
+
+<p>
+${noticia.descripcion}
+</p>
+
+<a href="noticia.html?id=${noticia.id}">
+Leer noticia →
+</a>
+
+</div>
+`;
+
+newsGrid.appendChild(tarjeta);
+});
+}
+
+mostrarNoticias();
+</script>
 
 </body>
 </html>
