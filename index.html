@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MIN45 | Noticias de fútbol</title>
-<meta name="description" content="MIN45 - Toda la actualidad del fútbol, fichajes, Barça, Real Madrid, LaLiga y Champions.">
+<meta name="description" content="MIN45 - Noticias de fútbol, LaLiga, Barça, Real Madrid, fichajes y Balón de Oro.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,25 +13,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 :root {
 --red: #e30613;
---dark-red: #b9000b;
 --black: #080808;
---dark: #111111;
+--dark: #111;
 --grey: #777;
---light: #f4f4f4;
---white: #ffffff;
+--light: #f3f3f3;
+--white: #fff;
 }
 
 * {
-box-sizing: border-box;
 margin: 0;
 padding: 0;
+box-sizing: border-box;
 }
 
 body {
 font-family: "Inter", Arial, sans-serif;
-background: #f3f3f3;
+background: var(--light);
 color: var(--black);
 }
 
@@ -51,23 +51,22 @@ border-bottom: 4px solid var(--red);
 }
 
 .topbar {
-max-width: 1250px;
+max-width: 1280px;
+min-height: 95px;
 margin: auto;
-min-height: 92px;
 padding: 0 25px;
 
 display: flex;
 align-items: center;
 justify-content: space-between;
-gap: 30px;
 }
 
 .logo {
 font-family: "Barlow Condensed", sans-serif;
-font-size: 64px;
-line-height: 1;
+font-size: 70px;
+line-height: .8;
 font-weight: 900;
-letter-spacing: -2px;
+letter-spacing: -3px;
 }
 
 .logo span {
@@ -76,9 +75,9 @@ color: var(--red);
 
 .claim {
 color: #aaa;
-font-size: 13px;
+font-size: 12px;
 text-transform: uppercase;
-letter-spacing: 2px;
+letter-spacing: 3px;
 font-weight: 700;
 }
 
@@ -92,13 +91,12 @@ border-top: 1px solid #222;
 }
 
 .nav-inner {
-max-width: 1250px;
+max-width: 1280px;
 margin: auto;
 padding: 0 25px;
 
 display: flex;
-align-items: center;
-gap: 28px;
+gap: 30px;
 overflow-x: auto;
 }
 
@@ -106,18 +104,18 @@ overflow-x: auto;
 color: #eee;
 font-family: "Barlow Condensed", sans-serif;
 font-size: 18px;
-font-weight: 700;
+font-weight: 800;
 text-transform: uppercase;
 padding: 15px 0;
 white-space: nowrap;
-position: relative;
-}
-
-.nav-inner a:first-child {
-color: var(--red);
+transition: .2s;
 }
 
 .nav-inner a:hover {
+color: var(--red);
+}
+
+.nav-inner a:first-child {
 color: var(--red);
 }
 
@@ -126,43 +124,56 @@ MAIN
 ========================= */
 
 main {
-max-width: 1250px;
-margin: 35px auto;
+max-width: 1280px;
+margin: 30px auto 60px;
 padding: 0 25px;
 }
 
-.section-title {
+/* =========================
+ÚLTIMA HORA
+========================= */
+
+.breaking {
+background: var(--black);
+color: white;
+
 display: flex;
 align-items: center;
-gap: 12px;
-margin-bottom: 18px;
+
+overflow: hidden;
+margin-bottom: 22px;
 }
 
-.section-title::before {
-content: "";
-width: 6px;
-height: 30px;
+.breaking-title {
 background: var(--red);
-}
+padding: 12px 20px;
 
-.section-title h2 {
 font-family: "Barlow Condensed", sans-serif;
-font-size: 32px;
+font-size: 18px;
 font-weight: 900;
 text-transform: uppercase;
+
+white-space: nowrap;
+}
+
+.breaking-text {
+padding: 0 20px;
+font-size: 14px;
+font-weight: 600;
+white-space: nowrap;
 }
 
 /* =========================
-HERO / CAROUSEL
+HERO
 ========================= */
 
 .hero {
 position: relative;
-width: 100%;
 height: 570px;
 overflow: hidden;
 background: #111;
-box-shadow: 0 15px 40px rgba(0,0,0,.18);
+
+box-shadow: 0 15px 45px rgba(0,0,0,.18);
 }
 
 .slide {
@@ -186,7 +197,6 @@ visibility: visible;
 width: 100%;
 height: 100%;
 object-fit: cover;
-display: block;
 }
 
 .slide::after {
@@ -198,60 +208,65 @@ background:
 linear-gradient(
 to top,
 rgba(0,0,0,.95) 0%,
-rgba(0,0,0,.60) 38%,
-rgba(0,0,0,.05) 75%
+rgba(0,0,0,.65) 35%,
+rgba(0,0,0,.05) 78%
 );
 }
 
 .slide-content {
 position: absolute;
 z-index: 2;
-bottom: 55px;
-left: 55px;
-right: 180px;
+
+left: 50px;
+bottom: 50px;
+right: 170px;
+
 color: white;
 }
 
 .tag {
 display: inline-block;
+
 background: var(--red);
+color: white;
+
 padding: 7px 13px;
 
 font-family: "Barlow Condensed", sans-serif;
 font-size: 16px;
-font-weight: 800;
-letter-spacing: 1px;
+font-weight: 900;
 text-transform: uppercase;
+letter-spacing: 1px;
 
 margin-bottom: 15px;
 }
 
 .slide-content h1 {
 font-family: "Barlow Condensed", sans-serif;
-font-size: clamp(40px, 5vw, 72px);
-line-height: .94;
+font-size: clamp(42px, 5vw, 76px);
+line-height: .91;
 font-weight: 900;
 text-transform: uppercase;
-max-width: 900px;
-letter-spacing: -.8px;
+max-width: 950px;
 }
 
 .slide-content p {
-margin-top: 14px;
-font-size: 15px;
+margin-top: 15px;
 color: #ddd;
+font-size: 15px;
 max-width: 700px;
 }
 
 /* =========================
-CAROUSEL BUTTONS
+BOTONES CARRUSEL
 ========================= */
 
 .carousel-buttons {
 position: absolute;
 z-index: 5;
+
 right: 30px;
-bottom: 40px;
+bottom: 35px;
 
 display: flex;
 gap: 8px;
@@ -262,10 +277,10 @@ width: 48px;
 height: 48px;
 
 border: 1px solid rgba(255,255,255,.5);
-background: rgba(0,0,0,.6);
+background: rgba(0,0,0,.65);
 color: white;
 
-font-size: 24px;
+font-size: 25px;
 cursor: pointer;
 
 transition: .2s;
@@ -277,46 +292,36 @@ border-color: var(--red);
 }
 
 /* =========================
-BREAKING BAR
+TITULOS
 ========================= */
 
-.breaking {
-margin-top: 20px;
-background: var(--black);
-color: white;
+.section-title {
+margin: 45px 0 20px;
 
 display: flex;
 align-items: center;
-
-overflow: hidden;
+gap: 12px;
 }
 
-.breaking-title {
+.section-title::before {
+content: "";
+
+width: 6px;
+height: 32px;
+
 background: var(--red);
-padding: 13px 20px;
-
-font-family: "Barlow Condensed", sans-serif;
-font-weight: 900;
-font-size: 18px;
-text-transform: uppercase;
-
-white-space: nowrap;
 }
 
-.breaking-text {
-padding: 0 20px;
-font-size: 14px;
-font-weight: 600;
-white-space: nowrap;
+.section-title h2 {
+font-family: "Barlow Condensed", sans-serif;
+font-size: 34px;
+font-weight: 900;
+text-transform: uppercase;
 }
 
 /* =========================
 NEWS GRID
 ========================= */
-
-.latest {
-margin-top: 45px;
-}
 
 .news-grid {
 display: grid;
@@ -327,7 +332,8 @@ gap: 22px;
 .news-card {
 background: white;
 overflow: hidden;
-box-shadow: 0 5px 18px rgba(0,0,0,.07);
+
+box-shadow: 0 5px 20px rgba(0,0,0,.07);
 
 transition:
 transform .25s ease,
@@ -336,11 +342,11 @@ box-shadow .25s ease;
 
 .news-card:hover {
 transform: translateY(-6px);
-box-shadow: 0 12px 30px rgba(0,0,0,.14);
+box-shadow: 0 15px 35px rgba(0,0,0,.14);
 }
 
 .news-image {
-height: 230px;
+height: 225px;
 position: relative;
 overflow: hidden;
 }
@@ -369,7 +375,7 @@ padding: 5px 10px;
 
 font-family: "Barlow Condensed", sans-serif;
 font-size: 15px;
-font-weight: 800;
+font-weight: 900;
 text-transform: uppercase;
 }
 
@@ -380,8 +386,8 @@ padding: 20px;
 .news-content h3 {
 font-family: "Barlow Condensed", sans-serif;
 font-size: 29px;
-line-height: 1;
-font-weight: 800;
+line-height: .98;
+font-weight: 900;
 text-transform: uppercase;
 }
 
@@ -389,27 +395,143 @@ text-transform: uppercase;
 margin-top: 12px;
 color: #666;
 font-size: 14px;
-line-height: 1.55;
+line-height: 1.5;
 }
 
 .read-more {
 display: inline-block;
+
 margin-top: 17px;
 
 color: var(--red);
 
 font-size: 12px;
-font-weight: 800;
+font-weight: 900;
 text-transform: uppercase;
 letter-spacing: .7px;
 }
 
 /* =========================
-FEATURED
+BALÓN DE ORO
+========================= */
+
+.ballon-section {
+margin-top: 55px;
+
+background: var(--black);
+color: white;
+
+padding: 35px;
+}
+
+.ballon-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+
+border-bottom: 1px solid #333;
+padding-bottom: 20px;
+margin-bottom: 25px;
+}
+
+.ballon-header h2 {
+font-family: "Barlow Condensed", sans-serif;
+font-size: 48px;
+line-height: .9;
+font-weight: 900;
+text-transform: uppercase;
+}
+
+.ballon-header span {
+color: var(--red);
+font-weight: 900;
+font-size: 13px;
+text-transform: uppercase;
+}
+
+.ballon-grid {
+display: grid;
+grid-template-columns: 1.5fr 1fr;
+gap: 30px;
+}
+
+.ballon-main h3 {
+font-family: "Barlow Condensed", sans-serif;
+font-size: 42px;
+line-height: .95;
+text-transform: uppercase;
+}
+
+.ballon-main p {
+color: #aaa;
+margin-top: 15px;
+line-height: 1.6;
+font-size: 14px;
+}
+
+.ranking {
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.rank {
+background: #171717;
+
+padding: 13px 15px;
+
+display: grid;
+grid-template-columns: 40px 1fr auto;
+align-items: center;
+
+border-left: 4px solid transparent;
+}
+
+.rank:first-child {
+border-left-color: var(--red);
+}
+
+.rank-number {
+font-family: "Barlow Condensed", sans-serif;
+font-size: 24px;
+font-weight: 900;
+color: var(--red);
+}
+
+.rank-name {
+font-family: "Barlow Condensed", sans-serif;
+font-size: 22px;
+font-weight: 800;
+text-transform: uppercase;
+}
+
+.rank-status {
+color: #888;
+font-size: 11px;
+text-transform: uppercase;
+font-weight: 700;
+}
+
+.ballon-date {
+margin-top: 22px;
+
+display: inline-block;
+
+background: var(--red);
+padding: 9px 13px;
+
+font-family: "Barlow Condensed", sans-serif;
+font-size: 17px;
+font-weight: 900;
+text-transform: uppercase;
+}
+
+/* =========================
+DESTACADA
 ========================= */
 
 .featured {
-margin-top: 50px;
+margin-top: 55px;
 
 display: grid;
 grid-template-columns: 1.7fr 1fr;
@@ -417,18 +539,19 @@ gap: 22px;
 }
 
 .featured-main {
-min-height: 390px;
+min-height: 400px;
 position: relative;
 overflow: hidden;
 background: #111;
 }
 
 .featured-main img {
+position: absolute;
+inset: 0;
+
 width: 100%;
 height: 100%;
 object-fit: cover;
-position: absolute;
-inset: 0;
 }
 
 .featured-main::after {
@@ -447,18 +570,20 @@ transparent 75%
 .featured-info {
 position: absolute;
 z-index: 2;
-bottom: 30px;
+
 left: 30px;
 right: 30px;
+bottom: 30px;
+
 color: white;
 }
 
 .featured-info h2 {
-margin-top: 8px;
+margin-top: 7px;
 
 font-family: "Barlow Condensed", sans-serif;
-font-size: 43px;
-line-height: .95;
+font-size: 45px;
+line-height: .93;
 font-weight: 900;
 text-transform: uppercase;
 }
@@ -471,13 +596,13 @@ gap: 22px;
 
 .side-card {
 background: white;
-min-height: 184px;
+min-height: 189px;
 
 display: grid;
 grid-template-columns: 42% 58%;
 
 overflow: hidden;
-box-shadow: 0 5px 18px rgba(0,0,0,.07);
+box-shadow: 0 5px 20px rgba(0,0,0,.07);
 }
 
 .side-card img {
@@ -493,7 +618,7 @@ padding: 18px;
 .side-content span {
 color: var(--red);
 font-size: 12px;
-font-weight: 800;
+font-weight: 900;
 text-transform: uppercase;
 }
 
@@ -503,50 +628,8 @@ margin-top: 8px;
 font-family: "Barlow Condensed", sans-serif;
 font-size: 25px;
 line-height: 1;
+font-weight: 900;
 text-transform: uppercase;
-}
-
-/* =========================
-NEWSLETTER
-========================= */
-
-.newsletter {
-margin-top: 55px;
-background: var(--black);
-color: white;
-
-padding: 40px;
-
-display: flex;
-justify-content: space-between;
-align-items: center;
-gap: 30px;
-}
-
-.newsletter h2 {
-font-family: "Barlow Condensed", sans-serif;
-font-size: 42px;
-line-height: .95;
-text-transform: uppercase;
-}
-
-.newsletter p {
-margin-top: 8px;
-color: #aaa;
-font-size: 14px;
-}
-
-.newsletter button {
-background: var(--red);
-border: none;
-color: white;
-
-padding: 15px 25px;
-
-font-weight: 800;
-text-transform: uppercase;
-
-cursor: pointer;
 }
 
 /* =========================
@@ -554,14 +637,14 @@ FOOTER
 ========================= */
 
 footer {
-margin-top: 65px;
 background: var(--black);
 color: white;
+
 padding: 50px 25px 25px;
 }
 
 .footer-inner {
-max-width: 1250px;
+max-width: 1280px;
 margin: auto;
 
 display: grid;
@@ -571,7 +654,7 @@ gap: 50px;
 
 .footer-logo {
 font-family: "Barlow Condensed", sans-serif;
-font-size: 52px;
+font-size: 55px;
 font-weight: 900;
 }
 
@@ -580,11 +663,11 @@ color: var(--red);
 }
 
 .footer-description {
-margin-top: 12px;
 color: #999;
+margin-top: 12px;
 max-width: 420px;
-line-height: 1.6;
 font-size: 14px;
+line-height: 1.6;
 }
 
 footer h3 {
@@ -599,62 +682,34 @@ list-style: none;
 }
 
 footer li {
+color: #888;
 margin-bottom: 9px;
-color: #999;
 font-size: 14px;
 }
 
-footer li:hover {
-color: white;
-}
-
 .copyright {
-max-width: 1250px;
+max-width: 1280px;
 margin: 45px auto 0;
-padding-top: 20px;
 
 border-top: 1px solid #222;
+padding-top: 20px;
 
 color: #666;
 font-size: 12px;
 }
 
 /* =========================
-MOBILE
+RESPONSIVE
 ========================= */
 
 @media (max-width: 900px) {
-
-.topbar {
-min-height: 75px;
-}
-
-.logo {
-font-size: 50px;
-}
 
 .claim {
 display: none;
 }
 
-main {
-padding: 0 15px;
-margin-top: 20px;
-}
-
-.hero {
-height: 500px;
-}
-
-.slide-content {
-left: 25px;
-right: 25px;
-bottom: 30px;
-}
-
-.carousel-buttons {
-right: 20px;
-bottom: 20px;
+.logo {
+font-size: 58px;
 }
 
 .news-grid {
@@ -665,6 +720,10 @@ grid-template-columns: repeat(2, 1fr);
 grid-template-columns: 1fr;
 }
 
+.ballon-grid {
+grid-template-columns: 1fr;
+}
+
 .footer-inner {
 grid-template-columns: 1fr 1fr;
 }
@@ -672,9 +731,22 @@ grid-template-columns: 1fr 1fr;
 
 @media (max-width: 600px) {
 
+main {
+padding: 0 14px;
+}
+
+.topbar {
+min-height: 78px;
+padding: 0 15px;
+}
+
+.logo {
+font-size: 52px;
+}
+
 .nav-inner {
 padding: 0 15px;
-gap: 20px;
+gap: 22px;
 }
 
 .nav-inner a {
@@ -682,15 +754,26 @@ font-size: 16px;
 }
 
 .hero {
-height: 450px;
+height: 465px;
+}
+
+.slide-content {
+left: 23px;
+right: 20px;
+bottom: 30px;
 }
 
 .slide-content h1 {
-font-size: 43px;
+font-size: 45px;
 }
 
 .slide-content p {
 display: none;
+}
+
+.carousel-buttons {
+right: 18px;
+bottom: 18px;
 }
 
 .carousel-buttons button {
@@ -698,26 +781,33 @@ width: 42px;
 height: 42px;
 }
 
-.breaking-text {
-font-size: 12px;
-}
-
 .news-grid {
 grid-template-columns: 1fr;
 }
 
-.news-image {
-height: 240px;
+.ballon-section {
+padding: 25px 20px;
+}
+
+.ballon-header {
+display: block;
+}
+
+.ballon-header h2 {
+font-size: 43px;
+}
+
+.ballon-header span {
+display: block;
+margin-top: 10px;
+}
+
+.ballon-main h3 {
+font-size: 36px;
 }
 
 .featured-info h2 {
-font-size: 35px;
-}
-
-.newsletter {
-padding: 30px 25px;
-flex-direction: column;
-align-items: flex-start;
+font-size: 37px;
 }
 
 .footer-inner {
@@ -725,14 +815,18 @@ grid-template-columns: 1fr;
 gap: 30px;
 }
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <header>
 
 <div class="topbar">
+
 <div class="logo">
 MIN<span>45</span>
 </div>
@@ -740,126 +834,32 @@ MIN<span>45</span>
 <div class="claim">
 La actualidad del fútbol
 </div>
+
 </div>
 
+
 <nav>
+
 <div class="nav-inner">
+
 <a href="#">Última hora</a>
 <a href="#">Barça</a>
 <a href="#">Real Madrid</a>
 <a href="#">Fichajes</a>
 <a href="#">LaLiga</a>
 <a href="#">Champions</a>
-<a href="#">Premier</a>
+<a href="#">Balón de Oro</a>
 <a href="#">Más fútbol</a>
+
 </div>
+
 </nav>
 
 </header>
 
 
+
 <main>
-
-<!-- =========================
-CARRUSEL PRINCIPAL
-========================== -->
-
-<section class="hero">
-
-<!-- NOTICIA 1 -->
-<article class="slide active">
-
-<img
-src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1600&q=85"
-alt="Estadio de fútbol"
->
-
-<div class="slide-content">
-
-<span class="tag">
-ÚLTIMA HORA
-</span>
-
-<h1>
-El fútbol europeo vuelve a ponerse en marcha
-</h1>
-
-<p>
-Toda la actualidad, resultados y protagonistas del mundo del fútbol.
-</p>
-
-</div>
-
-</article>
-
-
-<!-- NOTICIA 2 -->
-<article class="slide">
-
-<img
-src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1600&q=85"
-alt="Partido de fútbol"
->
-
-<div class="slide-content">
-
-<span class="tag">
-LALIGA
-</span>
-
-<h1>
-LaLiga afronta una nueva temporada cargada de emoción
-</h1>
-
-<p>
-Los grandes equipos ya preparan sus próximos partidos.
-</p>
-
-</div>
-
-</article>
-
-
-<!-- NOTICIA 3 -->
-<article class="slide">
-
-<img
-src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1600&q=85"
-alt="Fútbol"
->
-
-<div class="slide-content">
-
-<span class="tag">
-FICHAJES
-</span>
-
-<h1>
-El mercado de fichajes entra en su fase decisiva
-</h1>
-
-<p>
-Los grandes clubes continúan buscando nuevos refuerzos.
-</p>
-
-</div>
-
-</article>
-
-
-<div class="carousel-buttons">
-
-<button onclick="prevSlide()">
-‹
-</button>
-
-<button onclick="nextSlide()">
-›
-</button>
-
-</div>
-
-</section>
 
 
 <!-- =========================
@@ -873,27 +873,128 @@ Los grandes clubes continúan buscando nuevos refuerzos.
 </div>
 
 <div class="breaking-text">
-MIN45 | Todas las noticias del fútbol en un solo lugar
+Barça 2-4 Levante · Real Madrid 4-1 Rayo · El Balón de Oro ya tiene sus 30 candidatos
 </div>
 
 </div>
+
 
 
 <!-- =========================
-NOTICIAS
+CARRUSEL
 ========================== -->
 
-<section class="latest">
+<section class="hero">
+
+
+<article class="slide active">
+
+<img
+src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1600&q=85"
+alt="Fútbol"
+>
+
+<div class="slide-content">
+
+<span class="tag">
+BALÓN DE ORO
+</span>
+
+<h1>
+La carrera por el Balón de Oro 2026 ya está en marcha
+</h1>
+
+<p>
+Los 30 candidatos ya están confirmados y la gala se celebrará el 26 de octubre en Londres.
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="slide">
+
+<img
+src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1600&q=85"
+alt="Partido de fútbol"
+>
+
+<div class="slide-content">
+
+<span class="tag">
+BARÇA
+</span>
+
+<h1>
+El Barça mantiene el pleno tras ganar 2-4 al Levante
+</h1>
+
+<p>
+El conjunto azulgrana suma otra victoria y continúa líder tras la quinta jornada.
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="slide">
+
+<img
+src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1600&q=85"
+alt="Fútbol"
+>
+
+<div class="slide-content">
+
+<span class="tag">
+REAL MADRID
+</span>
+
+<h1>
+Mbappé lidera al Madrid en la goleada ante el Rayo
+</h1>
+
+<p>
+El delantero francés marcó dos goles en el 4-1 del conjunto blanco.
+</p>
+
+</div>
+
+</article>
+
+
+
+<div class="carousel-buttons">
+
+<button onclick="prevSlide()">‹</button>
+
+<button onclick="nextSlide()">›</button>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+ÚLTIMAS NOTICIAS
+========================== -->
+
+<section>
 
 <div class="section-title">
-<h2>
-Últimas noticias
-</h2>
+<h2>Últimas noticias</h2>
 </div>
 
 
 <div class="news-grid">
 
+
+<!-- BARÇA -->
 
 <article class="news-card">
 
@@ -912,14 +1013,15 @@ Barça
 
 </div>
 
+
 <div class="news-content">
 
 <h3>
-El Barça prepara una temporada con grandes objetivos
+El Barça sigue perfecto en LaLiga tras vencer al Levante
 </h3>
 
 <p>
-Toda la actualidad del conjunto azulgrana y sus próximos retos.
+El equipo azulgrana volvió a ganar y mantiene el pleno de victorias después de cinco jornadas.
 </p>
 
 <span class="read-more">
@@ -932,6 +1034,9 @@ Leer noticia →
 
 </article>
 
+
+
+<!-- MADRID -->
 
 <article class="news-card">
 
@@ -950,14 +1055,15 @@ Real Madrid
 
 </div>
 
+
 <div class="news-content">
 
 <h3>
-El Real Madrid ya piensa en su próximo gran desafío
+Mbappé firma un doblete en el 4-1 del Madrid al Rayo
 </h3>
 
 <p>
-Las últimas noticias del conjunto blanco.
+El francés volvió a ser protagonista con dos goles en la victoria del conjunto blanco.
 </p>
 
 <span class="read-more">
@@ -971,6 +1077,9 @@ Leer noticia →
 </article>
 
 
+
+<!-- BALÓN DE ORO -->
+
 <article class="news-card">
 
 <a href="#">
@@ -983,19 +1092,146 @@ alt="Estadio de fútbol"
 >
 
 <span class="news-tag">
-Champions
+Balón de Oro
 </span>
 
 </div>
 
+
 <div class="news-content">
 
 <h3>
-La Champions vuelve a centrar todas las miradas
+Ya se conocen los 30 nominados al Balón de Oro 2026
 </h3>
 
 <p>
-Los mejores equipos de Europa se preparan para otra gran batalla.
+Lamine Yamal, Mbappé, Kane, Rodri y Messi están entre los candidatos al prestigioso premio.
+</p>
+
+<span class="read-more">
+Leer noticia →
+</span>
+
+</div>
+
+</a>
+
+</article>
+
+
+
+<!-- LALIGA -->
+
+<article class="news-card">
+
+<a href="#">
+
+<div class="news-image">
+
+<img
+src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1000&q=80"
+alt="Campo de fútbol"
+>
+
+<span class="news-tag">
+LaLiga
+</span>
+
+</div>
+
+
+<div class="news-content">
+
+<h3>
+El Barça lidera LaLiga después de cinco jornadas
+</h3>
+
+<p>
+El conjunto azulgrana es el único equipo que mantiene el pleno de victorias.
+</p>
+
+<span class="read-more">
+Leer noticia →
+</span>
+
+</div>
+
+</a>
+
+</article>
+
+
+
+<!-- FICHAJES -->
+
+<article class="news-card">
+
+<a href="#">
+
+<div class="news-image">
+
+<img
+src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=80"
+alt="Fútbol"
+>
+
+<span class="news-tag">
+Fichajes
+</span>
+
+</div>
+
+
+<div class="news-content">
+
+<h3>
+El mercado sigue siendo uno de los grandes focos del fútbol europeo
+</h3>
+
+<p>
+Los grandes clubes continúan planificando sus próximas operaciones.
+</p>
+
+<span class="read-more">
+Leer noticia →
+</span>
+
+</div>
+
+</a>
+
+</article>
+
+
+
+<!-- INTERNACIONAL -->
+
+<article class="news-card">
+
+<a href="#">
+
+<div class="news-image">
+
+<img
+src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1000&q=80"
+alt="Partido de fútbol"
+>
+
+<span class="news-tag">
+Internacional
+</span>
+
+</div>
+
+
+<div class="news-content">
+
+<h3>
+Europa vuelve a mirar hacia sus grandes protagonistas
+</h3>
+
+<p>
+Los principales equipos afrontan una nueva semana cargada de fútbol.
 </p>
 
 <span class="read-more">
@@ -1014,11 +1250,154 @@ Leer noticia →
 </section>
 
 
+
 <!-- =========================
-DESTACADO
+BALÓN DE ORO
+========================== -->
+
+<section class="ballon-section">
+
+
+<div class="ballon-header">
+
+<h2>
+Balón de Oro<br>
+2026
+</h2>
+
+<span>
+Gala · 26 octubre · Londres
+</span>
+
+</div>
+
+
+
+<div class="ballon-grid">
+
+
+<div class="ballon-main">
+
+<h3>
+La carrera por el premio más importante del fútbol individual
+</h3>
+
+<p>
+France Football ya ha anunciado los 30 candidatos al Balón de Oro 2026.
+Entre los grandes nombres aparecen Lamine Yamal, Kylian Mbappé,
+Harry Kane, Rodri, Vinícius Júnior, Jude Bellingham y Lionel Messi.
+</p>
+
+<div class="ballon-date">
+26 OCTUBRE · LONDRES
+</div>
+
+</div>
+
+
+
+<div class="ranking">
+
+
+<div class="rank">
+
+<div class="rank-number">
+01
+</div>
+
+<div class="rank-name">
+Harry Kane
+</div>
+
+<div class="rank-status">
+Candidato
+</div>
+
+</div>
+
+
+<div class="rank">
+
+<div class="rank-number">
+02
+</div>
+
+<div class="rank-name">
+Lamine Yamal
+</div>
+
+<div class="rank-status">
+Candidato
+</div>
+
+</div>
+
+
+<div class="rank">
+
+<div class="rank-number">
+03
+</div>
+
+<div class="rank-name">
+Kylian Mbappé
+</div>
+
+<div class="rank-status">
+Candidato
+</div>
+
+</div>
+
+
+<div class="rank">
+
+<div class="rank-number">
+04
+</div>
+
+<div class="rank-name">
+Rodri
+</div>
+
+<div class="rank-status">
+Candidato
+</div>
+
+</div>
+
+
+<div class="rank">
+
+<div class="rank-number">
+05
+</div>
+
+<div class="rank-name">
+Fabián Ruiz
+</div>
+
+<div class="rank-status">
+Candidato
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+DESTACADA
 ========================== -->
 
 <section class="featured">
+
 
 <article class="featured-main">
 
@@ -1030,16 +1409,17 @@ alt="Campo de fútbol"
 <div class="featured-info">
 
 <span class="tag">
-ESPECIAL
+ESPECIAL MIN45
 </span>
 
 <h2>
-Todo lo que necesitas saber del mundo del fútbol
+Todo lo que necesitas saber de la carrera por el Balón de Oro
 </h2>
 
 </div>
 
 </article>
+
 
 
 <div class="side-news">
@@ -1055,11 +1435,11 @@ alt="Fútbol"
 <div class="side-content">
 
 <span>
-Fichajes
+Barça
 </span>
 
 <h3>
-Los movimientos que pueden cambiar el mercado
+El líder mantiene su racha perfecta
 </h3>
 
 </div>
@@ -1067,21 +1447,22 @@ Los movimientos que pueden cambiar el mercado
 </article>
 
 
+
 <article class="side-card">
 
 <img
-src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=80"
+src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=700&q=80"
 alt="Fútbol"
 >
 
 <div class="side-content">
 
 <span>
-LaLiga
+Real Madrid
 </span>
 
 <h3>
-Así llegan los grandes equipos
+Mbappé vuelve a ser decisivo
 </h3>
 
 </div>
@@ -1094,32 +1475,8 @@ Así llegan los grandes equipos
 </section>
 
 
-<!-- =========================
-NEWSLETTER
-========================== -->
-
-<section class="newsletter">
-
-<div>
-
-<h2>
-No te pierdas<br>
-ninguna noticia
-</h2>
-
-<p>
-Próximamente podrás recibir las noticias de MIN45.
-</p>
-
-</div>
-
-<button>
-Próximamente
-</button>
-
-</section>
-
 </main>
+
 
 
 <!-- =========================
@@ -1130,6 +1487,7 @@ FOOTER
 
 <div class="footer-inner">
 
+
 <div>
 
 <div class="footer-logo">
@@ -1137,9 +1495,9 @@ MIN<span>45</span>
 </div>
 
 <p class="footer-description">
-MIN45 es un proyecto de actualidad futbolística
-centrado en las principales noticias, fichajes,
-competiciones y protagonistas del mundo del fútbol.
+MIN45 es un medio digital independiente
+centrado en la actualidad del fútbol,
+sus protagonistas y sus grandes competiciones.
 </p>
 
 </div>
@@ -1158,6 +1516,7 @@ Secciones
 <li>Fichajes</li>
 <li>LaLiga</li>
 <li>Champions</li>
+<li>Balón de Oro</li>
 </ul>
 
 </div>
@@ -1172,20 +1531,23 @@ MIN45
 <ul>
 <li>Sobre nosotros</li>
 <li>Contacto</li>
-<li>Política de privacidad</li>
 <li>Aviso legal</li>
+<li>Política de privacidad</li>
+<li>Política de cookies</li>
 </ul>
 
 </div>
+
 
 </div>
 
 
 <div class="copyright">
-© 2026 MIN45 — Todos los derechos reservados.
+© 2026 MIN45 — Actualidad futbolística.
 </div>
 
 </footer>
+
 
 
 <script>
@@ -1218,13 +1580,12 @@ showSlide(currentSlide - 1);
 }
 
 
-/* Cambio automático cada 5 segundos */
-
 setInterval(() => {
 nextSlide();
-}, 5000);
+}, 5500);
 
 </script>
+
 
 </body>
 </html>
