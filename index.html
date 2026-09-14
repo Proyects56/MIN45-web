@@ -3,1054 +3,1481 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="MIN45 - Noticias de fútbol, LaLiga, Barça, Real Madrid, fichajes y fútbol internacional.">
+
 <title>MIN45 | Noticias de fútbol</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
---red:#e10600;
---black:#080808;
---light:#f4f4f4;
---gray:#777;
+  --red:#e10600;
+  --black:#080808;
+  --light:#f4f4f4;
+  --gray:#777;
 }
 
 *{
-box-sizing:border-box;
-margin:0;
-padding:0;
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
 html{
-scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-font-family:Inter,Arial,sans-serif;
-background:var(--light);
-color:#111;
+  font-family:Inter,Arial,sans-serif;
+  background:var(--light);
+  color:#111;
 }
 
 a{
-text-decoration:none;
-color:inherit;
+  text-decoration:none;
+  color:inherit;
 }
 
-/* CABECERA */
+
+/* =========================
+   CABECERA
+========================= */
 
 .top{
-background:#080808;
-color:white;
-border-bottom:1px solid #222;
+  background:#080808;
+  color:white;
+  border-bottom:1px solid #222;
 }
 
 .top-inner{
-max-width:1250px;
-margin:auto;
-padding:15px 22px;
-display:flex;
-justify-content:space-between;
-align-items:center;
+  max-width:1250px;
+  margin:auto;
+  padding:15px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .logo{
-font-family:"Barlow Condensed",sans-serif;
-font-size:48px;
-font-weight:900;
-letter-spacing:-2px;
+  font-family:"Barlow Condensed",sans-serif;
+  font-size:48px;
+  font-weight:900;
+  letter-spacing:-2px;
 }
 
 .logo span{
-color:var(--red);
+  color:var(--red);
 }
 
 .status{
-font-size:11px;
-font-weight:800;
-letter-spacing:1px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
 }
 
 .status b{
-color:var(--red);
+  color:var(--red);
 }
 
-/* MENÚ */
+
+/* =========================
+   MENÚ
+========================= */
 
 .nav{
-background:#101010;
-color:white;
-position:sticky;
-top:0;
-z-index:20;
-border-bottom:3px solid var(--red);
+  background:#101010;
+  color:white;
+  position:sticky;
+  top:0;
+  z-index:20;
+  border-bottom:3px solid var(--red);
 }
 
 .nav-inner{
-max-width:1250px;
-margin:auto;
-display:flex;
-overflow:auto;
-padding:0 12px;
+  max-width:1250px;
+  margin:auto;
+  display:flex;
+  overflow:auto;
+  padding:0 12px;
 }
 
 .nav a{
-font-size:11px;
-font-weight:900;
-letter-spacing:.6px;
-padding:16px 13px;
-white-space:nowrap;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.6px;
+  padding:16px 13px;
+  white-space:nowrap;
 }
 
 .nav a:hover{
-background:var(--red);
+  background:var(--red);
 }
 
-/* ÚLTIMA HORA */
+
+/* =========================
+   ÚLTIMA HORA
+========================= */
 
 .breaking{
-background:var(--red);
-color:white;
+  background:var(--red);
+  color:white;
 }
 
 .breaking-inner{
-max-width:1250px;
-margin:auto;
-padding:9px 22px;
-font-size:12px;
-font-weight:700;
-display:flex;
-gap:12px;
-align-items:center;
+  max-width:1250px;
+  margin:auto;
+  padding:9px 22px;
+  font-size:12px;
+  font-weight:700;
+  display:flex;
+  gap:12px;
+  align-items:center;
 }
 
 .breaking-label{
-background:white;
-color:#111;
-padding:5px 7px;
-font-size:9px;
-font-weight:900;
-letter-spacing:1px;
+  background:white;
+  color:#111;
+  padding:5px 7px;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
 }
 
-/* CONTENIDO */
+
+/* =========================
+   CONTENIDO
+========================= */
 
 main{
-max-width:1250px;
-margin:auto;
-padding:28px 22px 60px;
+  max-width:1250px;
+  margin:auto;
+  padding:28px 22px 60px;
 }
 
-/* CARRUSEL */
+
+/* =========================
+   CARRUSEL
+========================= */
 
 .hero{
-height:500px;
-background:#000;
-position:relative;
-overflow:hidden;
-border-radius:4px;
+  height:500px;
+  background:#000;
+  position:relative;
+  overflow:hidden;
+  border-radius:4px;
 }
 
 .slide{
-display:none;
-height:100%;
-position:relative;
+  display:none;
+  height:100%;
+  position:relative;
 }
 
 .slide.active{
-display:block;
+  display:block;
 }
 
 .slide img{
-width:100%;
-height:100%;
-object-fit:cover;
-opacity:.72;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.72;
 }
 
 .slide::after{
-content:"";
-position:absolute;
-inset:35% 0 0;
-background:linear-gradient(transparent,rgba(0,0,0,.95));
+  content:"";
+  position:absolute;
+  inset:35% 0 0;
+  background:linear-gradient(transparent,rgba(0,0,0,.95));
 }
 
 .slide-content{
-position:absolute;
-z-index:2;
-left:0;
-bottom:0;
-padding:40px;
-color:white;
-max-width:850px;
+  position:absolute;
+  z-index:2;
+  left:0;
+  bottom:0;
+  padding:40px;
+  color:white;
+  max-width:850px;
 }
 
 .tag{
-display:inline-block;
-background:var(--red);
-color:white;
-padding:6px 9px;
-margin-bottom:9px;
-font-size:10px;
-font-weight:900;
-letter-spacing:1px;
+  display:inline-block;
+  background:var(--red);
+  color:white;
+  padding:6px 9px;
+  margin-bottom:9px;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
 }
 
 .slide h1{
-font-family:"Barlow Condensed";
-font-size:52px;
-line-height:.94;
-text-transform:uppercase;
+  font-family:"Barlow Condensed";
+  font-size:52px;
+  line-height:.94;
+  text-transform:uppercase;
 }
 
 .slide p{
-font-size:13px;
-line-height:1.5;
-color:#ddd;
-margin:10px 0 15px;
+  font-size:13px;
+  line-height:1.5;
+  color:#ddd;
+  margin:10px 0 15px;
 }
 
-/* BOTONES */
+
+/* =========================
+   BOTONES
+========================= */
 
 .read{
-display:inline-block;
-background:#111;
-color:white;
-padding:11px 14px;
-font-size:10px;
-font-weight:900;
-letter-spacing:.5px;
-text-transform:uppercase;
+  display:inline-block;
+  background:#111;
+  color:white;
+  padding:11px 14px;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.5px;
+  text-transform:uppercase;
 }
 
 .read:hover{
-background:var(--red);
+  background:var(--red);
 }
 
-/* FLECHAS */
+
+/* =========================
+   FLECHAS
+========================= */
 
 .arrows{
-position:absolute;
-z-index:4;
-right:24px;
-bottom:25px;
-display:flex;
-gap:6px;
+  position:absolute;
+  z-index:4;
+  right:24px;
+  bottom:25px;
+  display:flex;
+  gap:6px;
 }
 
 .arrow{
-width:42px;
-height:42px;
-background:#111c;
-color:white;
-border:1px solid white;
-cursor:pointer;
-font-size:22px;
+  width:42px;
+  height:42px;
+  background:#111c;
+  color:white;
+  border:1px solid white;
+  cursor:pointer;
+  font-size:22px;
 }
 
 .arrow:hover{
-background:var(--red);
+  background:var(--red);
 }
 
-/* TÍTULOS DE SECCIÓN */
+
+/* =========================
+   TÍTULOS
+========================= */
 
 .section-head{
-display:flex;
-justify-content:space-between;
-align-items:end;
-border-bottom:3px solid #111;
-margin:42px 0 18px;
-padding-bottom:9px;
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  border-bottom:3px solid #111;
+  margin:42px 0 18px;
+  padding-bottom:9px;
 }
 
 .section-head h2{
-font-family:"Barlow Condensed";
-font-size:34px;
-text-transform:uppercase;
+  font-family:"Barlow Condensed";
+  font-size:34px;
+  text-transform:uppercase;
 }
 
 .section-head h2::before{
-content:"";
-display:inline-block;
-background:var(--red);
-width:7px;
-height:27px;
-margin-right:9px;
-vertical-align:-4px;
+  content:"";
+  display:inline-block;
+  background:var(--red);
+  width:7px;
+  height:27px;
+  margin-right:9px;
+  vertical-align:-4px;
 }
 
 .section-head span{
-font-size:10px;
-font-weight:800;
-color:#888;
+  font-size:10px;
+  font-weight:800;
+  color:#888;
 }
 
-/* TARJETAS */
+
+/* =========================
+   NOTICIAS
+========================= */
 
 .news-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
 }
 
 .news-card{
-background:white;
-border:1px solid #e2e2e2;
-display:flex;
-flex-direction:column;
-overflow:hidden;
-transition:.2s;
+  background:white;
+  border:1px solid #e2e2e2;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  transition:.2s;
 }
 
 .news-card:hover{
-transform:translateY(-4px);
-box-shadow:0 12px 25px #00000012;
+  transform:translateY(-4px);
+  box-shadow:0 12px 25px #00000012;
 }
 
 .news-image{
-height:205px;
+  height:205px;
 }
 
 .news-image img{
-width:100%;
-height:100%;
-object-fit:cover;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
 .news-content{
-padding:17px;
-display:flex;
-flex-direction:column;
-flex:1;
+  padding:17px;
+  display:flex;
+  flex-direction:column;
+  flex:1;
 }
 
 .category{
-color:var(--red);
-font-size:10px;
-font-weight:900;
-letter-spacing:1px;
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:1px;
 }
 
 .news-content h3{
-font-family:"Barlow Condensed";
-font-size:28px;
-line-height:1;
-text-transform:uppercase;
-margin:7px 0 9px;
+  font-family:"Barlow Condensed";
+  font-size:28px;
+  line-height:1;
+  text-transform:uppercase;
+  margin:7px 0 9px;
 }
 
 .news-content p{
-font-size:12px;
-line-height:1.55;
-color:#666;
-flex:1;
+  font-size:12px;
+  line-height:1.55;
+  color:#666;
+  flex:1;
 }
 
 .date{
-font-size:10px;
-color:#999;
-margin-top:12px;
+  font-size:10px;
+  color:#999;
+  margin-top:12px;
 }
 
 .news-content .read{
-margin-top:13px;
-align-self:flex-start;
+  margin-top:13px;
+  align-self:flex-start;
 }
 
-/* BALÓN DE ORO */
+
+/* =========================
+   CRÉDITO DE FOTO
+========================= */
+
+.photo-credit{
+  font-size:9px;
+  color:#999;
+  padding:7px 10px;
+  background:#fafafa;
+  border-top:1px solid #eee;
+  line-height:1.4;
+}
+
+.photo-credit a{
+  color:#777;
+  text-decoration:underline;
+}
+
+.photo-credit a:hover{
+  color:var(--red);
+}
+
+
+/* =========================
+   BALÓN DE ORO
+========================= */
 
 .feature{
-background:#090909;
-color:white;
-padding:28px;
-display:grid;
-grid-template-columns:1.2fr 1fr;
-gap:28px;
-align-items:center;
+  background:#090909;
+  color:white;
+  padding:28px;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:28px;
+  align-items:center;
 }
 
 .feature img{
-width:100%;
-height:300px;
-object-fit:cover;
+  width:100%;
+  height:300px;
+  object-fit:cover;
 }
 
 .feature h2{
-font-family:"Barlow Condensed";
-font-size:48px;
-line-height:.94;
-text-transform:uppercase;
-margin:9px 0;
+  font-family:"Barlow Condensed";
+  font-size:48px;
+  line-height:.94;
+  text-transform:uppercase;
+  margin:9px 0;
 }
 
 .feature p{
-color:#bbb;
-font-size:13px;
-line-height:1.6;
-margin-bottom:15px;
+  color:#bbb;
+  font-size:13px;
+  line-height:1.6;
+  margin-bottom:15px;
 }
 
 .feature .read{
-background:var(--red);
+  background:var(--red);
 }
 
-/* CATEGORÍAS */
+
+/* =========================
+   CATEGORÍAS
+========================= */
 
 .categories{
-display:grid;
-grid-template-columns:repeat(6,1fr);
-gap:7px;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:7px;
 }
 
 .category-box{
-background:#111;
-color:white;
-text-align:center;
-padding:16px 5px;
-font-family:"Barlow Condensed";
-font-size:17px;
-text-transform:uppercase;
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:16px 5px;
+  font-family:"Barlow Condensed";
+  font-size:17px;
+  text-transform:uppercase;
 }
 
 .category-box:hover{
-background:var(--red);
+  background:var(--red);
 }
 
-/* PÁGINA DE NOTICIA */
+
+/* =========================
+   PÁGINA DE NOTICIA
+========================= */
 
 .article-page{
-display:none;
-max-width:1000px;
-margin:auto;
-background:white;
-padding:45px 55px 70px;
-min-height:700px;
+  display:none;
+  max-width:1000px;
+  margin:auto;
+  background:white;
+  padding:45px 55px 70px;
+  min-height:700px;
 }
 
 .article-page.active{
-display:block;
+  display:block;
 }
 
 .article-title{
-font-family:"Barlow Condensed";
-font-size:64px;
-line-height:.93;
-text-transform:uppercase;
-margin:8px 0 12px;
+  font-family:"Barlow Condensed";
+  font-size:64px;
+  line-height:.93;
+  text-transform:uppercase;
+  margin:8px 0 12px;
 }
 
 .article-image{
-width:100%;
-height:480px;
-object-fit:cover;
-margin-top:15px;
+  width:100%;
+  height:480px;
+  object-fit:cover;
+  margin-top:15px;
 }
 
 .article-text{
-max-width:760px;
-margin:30px auto;
-font-size:16px;
-line-height:1.8;
+  max-width:760px;
+  margin:30px auto;
+  font-size:16px;
+  line-height:1.8;
 }
 
 .article-text p{
-margin-bottom:20px;
+  margin-bottom:20px;
 }
 
 .article-text h2{
-font-family:"Barlow Condensed";
-font-size:34px;
-text-transform:uppercase;
-border-left:6px solid var(--red);
-padding-left:10px;
-margin:30px 0 12px;
+  font-family:"Barlow Condensed";
+  font-size:34px;
+  text-transform:uppercase;
+  border-left:6px solid var(--red);
+  padding-left:10px;
+  margin:30px 0 12px;
+}
+
+.article-credit{
+  font-size:10px;
+  color:#888;
+  margin-top:8px;
+}
+
+.article-credit a{
+  text-decoration:underline;
 }
 
 .back{
-display:inline-block;
-background:#111;
-color:white;
-padding:12px 15px;
-font-size:10px;
-font-weight:900;
-text-transform:uppercase;
+  display:inline-block;
+  background:#111;
+  color:white;
+  padding:12px 15px;
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
 }
 
 .back:hover{
-background:var(--red);
+  background:var(--red);
 }
 
-/* FOOTER */
+
+/* =========================
+   CRÉDITOS GENERALES
+========================= */
+
+.credits{
+  background:#111;
+  color:#aaa;
+  padding:30px 22px;
+}
+
+.credits-inner{
+  max-width:1250px;
+  margin:auto;
+}
+
+.credits h3{
+  color:white;
+  font-family:"Barlow Condensed";
+  font-size:25px;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.credits p{
+  font-size:10px;
+  line-height:1.7;
+  margin-bottom:5px;
+}
+
+.credits a{
+  color:#ddd;
+  text-decoration:underline;
+}
+
+.credits a:hover{
+  color:white;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-background:#080808;
-color:#999;
-padding:35px 22px;
+  background:#080808;
+  color:#999;
+  padding:35px 22px;
 }
 
 .footer-inner{
-max-width:1250px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
+  max-width:1250px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
 }
 
 .footer-logo{
-font-family:"Barlow Condensed";
-font-size:40px;
-font-weight:900;
-color:white;
+  font-family:"Barlow Condensed";
+  font-size:40px;
+  font-weight:900;
+  color:white;
 }
 
 .footer-logo span{
-color:var(--red);
+  color:var(--red);
 }
 
 footer p{
-font-size:10px;
+  font-size:10px;
 }
 
-/* MÓVIL */
+
+/* =========================
+   MÓVIL
+========================= */
 
 @media(max-width:800px){
 
-.hero{
-height:430px;
+  .hero{
+    height:430px;
+  }
+
+  .slide h1{
+    font-size:42px;
+  }
+
+  .news-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .feature{
+    grid-template-columns:1fr;
+  }
+
+  .categories{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .article-page{
+    padding:30px 20px 55px;
+  }
+
+  .article-title{
+    font-size:48px;
+  }
+
+  .article-image{
+    height:330px;
+  }
 }
 
-.slide h1{
-font-size:42px;
-}
-
-.news-grid{
-grid-template-columns:1fr 1fr;
-}
-
-.feature{
-grid-template-columns:1fr;
-}
-
-.categories{
-grid-template-columns:repeat(3,1fr);
-}
-
-.article-page{
-padding:30px 20px 55px;
-}
-
-.article-title{
-font-size:48px;
-}
-
-.article-image{
-height:330px;
-}
-}
 
 @media(max-width:520px){
 
-.top-inner{
-padding:14px 15px;
+  .top-inner{
+    padding:14px 15px;
+  }
+
+  .logo{
+    font-size:41px;
+  }
+
+  .status{
+    display:none;
+  }
+
+  .nav a{
+    padding:14px 9px;
+    font-size:9px;
+  }
+
+  .breaking-inner{
+    padding:9px 12px;
+    font-size:10px;
+  }
+
+  main{
+    padding:18px 12px 45px;
+  }
+
+  .hero{
+    height:420px;
+  }
+
+  .slide-content{
+    padding:24px 20px;
+  }
+
+  .slide h1{
+    font-size:35px;
+  }
+
+  .slide p{
+    font-size:11px;
+  }
+
+  .news-grid{
+    grid-template-columns:1fr;
+  }
+
+  .news-image{
+    height:220px;
+  }
+
+  .section-head h2{
+    font-size:29px;
+  }
+
+  .section-head span{
+    display:none;
+  }
+
+  .feature{
+    padding:18px;
+  }
+
+  .feature h2{
+    font-size:40px;
+  }
+
+  .categories{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .article-title{
+    font-size:42px;
+  }
+
+  .article-image{
+    height:260px;
+  }
+
+  .article-text{
+    font-size:15px;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
 }
 
-.logo{
-font-size:41px;
-}
-
-.status{
-display:none;
-}
-
-.nav a{
-padding:14px 9px;
-font-size:9px;
-}
-
-.breaking-inner{
-padding:9px 12px;
-font-size:10px;
-}
-
-main{
-padding:18px 12px 45px;
-}
-
-.hero{
-height:420px;
-}
-
-.slide-content{
-padding:24px 20px;
-}
-
-.slide h1{
-font-size:35px;
-}
-
-.slide p{
-font-size:11px;
-}
-
-.news-grid{
-grid-template-columns:1fr;
-}
-
-.news-image{
-height:220px;
-}
-
-.section-head h2{
-font-size:29px;
-}
-
-.section-head span{
-display:none;
-}
-
-.feature{
-padding:18px;
-}
-
-.feature h2{
-font-size:40px;
-}
-
-.categories{
-grid-template-columns:repeat(2,1fr);
-}
-
-.article-title{
-font-size:42px;
-}
-
-.article-image{
-height:260px;
-}
-
-.article-text{
-font-size:15px;
-}
-}
 </style>
 </head>
 
+
 <body>
 
-<header class="top">
-<div class="top-inner">
-<a class="logo" href="#" onclick="volverInicio();return false">
-MIN<span>45</span>
-</a>
 
-<div class="status">
-<b>●</b> FÚTBOL · NOTICIAS · ACTUALIDAD
-</div>
-</div>
+<!-- =========================
+     CABECERA
+========================= -->
+
+<header class="top">
+
+  <div class="top-inner">
+
+    <a
+      class="logo"
+      href="#"
+      onclick="volverInicio();return false"
+    >
+      MIN<span>45</span>
+    </a>
+
+    <div class="status">
+      <b>●</b> FÚTBOL · NOTICIAS · ACTUALIDAD
+    </div>
+
+  </div>
+
 </header>
 
+
+<!-- =========================
+     MENÚ
+========================= -->
+
 <nav class="nav">
-<div class="nav-inner">
-<a href="#ultimas">ÚLTIMA HORA</a>
-<a href="#ultimas">BARÇA</a>
-<a href="#ultimas">REAL MADRID</a>
-<a href="#ultimas">FICHAJES</a>
-<a href="#ultimas">LALIGA</a>
-<a href="#ultimas">CHAMPIONS</a>
-<a href="#balonoro">BALÓN DE ORO</a>
-</div>
+
+  <div class="nav-inner">
+
+    <a href="#ultimas">ÚLTIMA HORA</a>
+    <a href="#ultimas">BARÇA</a>
+    <a href="#ultimas">REAL MADRID</a>
+    <a href="#ultimas">FICHAJES</a>
+    <a href="#ultimas">LALIGA</a>
+    <a href="#ultimas">CHAMPIONS</a>
+    <a href="#balonoro">BALÓN DE ORO</a>
+
+  </div>
+
 </nav>
 
+
+<!-- =========================
+     ÚLTIMA HORA
+========================= -->
+
 <div class="breaking">
-<div class="breaking-inner">
-<span class="breaking-label">ÚLTIMA HORA</span>
-<span>El Barça gana 2-4 al Levante · El Real Madrid vence 4-1 al Rayo</span>
-</div>
+
+  <div class="breaking-inner">
+
+    <span class="breaking-label">
+      ÚLTIMA HORA
+    </span>
+
+    <span>
+      El Barça gana 2-4 al Levante · El Real Madrid vence 4-1 al Rayo
+    </span>
+
+  </div>
+
 </div>
 
-<!-- WEB PRINCIPAL -->
+
+<!-- =========================
+     PORTADA
+========================= -->
 
 <div id="home">
 
 <main>
 
-<section class="hero" id="hero"></section>
 
-<div class="section-head" id="ultimas">
-<h2>Últimas noticias</h2>
-<span>MIN45 · ACTUALIDAD</span>
+<!-- CARRUSEL -->
+
+<section
+  class="hero"
+  id="hero"
+></section>
+
+
+<!-- NOTICIAS -->
+
+<div
+  class="section-head"
+  id="ultimas"
+>
+
+  <h2>
+    Últimas noticias
+  </h2>
+
+  <span>
+    MIN45 · ACTUALIDAD
+  </span>
+
 </div>
 
-<section class="news-grid" id="news-grid"></section>
 
-<div class="section-head" id="balonoro">
-<h2>Especial Balón de Oro</h2>
-<span>26 OCTUBRE · LONDRES</span>
+<section
+  class="news-grid"
+  id="news-grid"
+></section>
+
+
+<!-- BALÓN DE ORO -->
+
+<div
+  class="section-head"
+  id="balonoro"
+>
+
+  <h2>
+    Especial Balón de Oro
+  </h2>
+
+  <span>
+    26 OCTUBRE · LONDRES
+  </span>
+
 </div>
+
 
 <section class="feature">
 
-<img id="ballon-image" alt="Balón de Oro">
+  <div>
 
-<div>
-<span class="category">BALÓN DE ORO 2026</span>
+    <img
+      id="ballon-image"
+      alt="Balón de Oro"
+    >
 
-<h2 id="ballon-title"></h2>
+    <div
+      class="photo-credit"
+      id="ballon-credit"
+    ></div>
 
-<p id="ballon-description"></p>
+  </div>
 
-<a href="#" class="read" id="ballon-link">
-Ver noticia completa →
-</a>
-</div>
+
+  <div>
+
+    <span class="category">
+      BALÓN DE ORO 2026
+    </span>
+
+    <h2 id="ballon-title"></h2>
+
+    <p id="ballon-description"></p>
+
+    <a
+      href="#"
+      class="read"
+      id="ballon-link"
+    >
+      Ver noticia completa →
+    </a>
+
+  </div>
 
 </section>
 
+
+<!-- CATEGORÍAS -->
+
 <div class="section-head">
-<h2>MIN45 · Fútbol</h2>
-<span>TODO EL FÚTBOL EN UN SOLO SITIO</span>
+
+  <h2>
+    MIN45 · Fútbol
+  </h2>
+
+  <span>
+    TODO EL FÚTBOL EN UN SOLO SITIO
+  </span>
+
 </div>
+
 
 <section class="categories">
 
-<a class="category-box" href="#ultimas">Barça</a>
-<a class="category-box" href="#ultimas">Madrid</a>
-<a class="category-box" href="#ultimas">Fichajes</a>
-<a class="category-box" href="#ultimas">LaLiga</a>
-<a class="category-box" href="#ultimas">Champions</a>
-<a class="category-box" href="#balonoro">Balón de Oro</a>
+  <a
+    class="category-box"
+    href="#ultimas"
+  >
+    Barça
+  </a>
+
+  <a
+    class="category-box"
+    href="#ultimas"
+  >
+    Madrid
+  </a>
+
+  <a
+    class="category-box"
+    href="#ultimas"
+  >
+    Fichajes
+  </a>
+
+  <a
+    class="category-box"
+    href="#ultimas"
+  >
+    LaLiga
+  </a>
+
+  <a
+    class="category-box"
+    href="#ultimas"
+  >
+    Champions
+  </a>
+
+  <a
+    class="category-box"
+    href="#balonoro"
+  >
+    Balón de Oro
+  </a>
 
 </section>
+
 
 </main>
 
 </div>
 
-<!-- AQUÍ SE ABRIRÁ LA NOTICIA COMPLETA -->
 
-<article class="article-page" id="article-page"></article>
+<!-- =========================
+     NOTICIA COMPLETA
+========================= -->
+
+<article
+  class="article-page"
+  id="article-page"
+></article>
+
+
+<!-- =========================
+     CRÉDITOS
+========================= -->
+
+<section class="credits">
+
+  <div class="credits-inner">
+
+    <h3>
+      Créditos de imágenes
+    </h3>
+
+    <div id="credits-list"></div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-<div class="footer-inner">
+  <div class="footer-inner">
 
-<div class="footer-logo">
-MIN<span>45</span>
-</div>
+    <div class="footer-logo">
+      MIN<span>45</span>
+    </div>
 
-<p>
-Noticias de fútbol · MIN45
-</p>
+    <p>
+      Noticias de fútbol · MIN45
+    </p>
 
-</div>
+  </div>
 
 </footer>
 
-<!-- IMPORTANTE: CARGAMOS LAS NOTICIAS -->
+
+<!-- =========================
+     CARGAMOS NOTICIAS
+========================= -->
 
 <script src="noticias.js"></script>
 
+
 <script>
 
-const newsGrid = document.getElementById("news-grid");
-const hero = document.getElementById("hero");
 
-const home = document.getElementById("home");
-const articlePage = document.getElementById("article-page");
+/* =========================
+   VARIABLES
+========================= */
+
+const newsGrid =
+  document.getElementById("news-grid");
+
+const hero =
+  document.getElementById("hero");
+
+const home =
+  document.getElementById("home");
+
+const articlePage =
+  document.getElementById("article-page");
+
+const creditsList =
+  document.getElementById("credits-list");
 
 
-/* CREAR TARJETA */
+/* =========================
+   TARJETAS
+========================= */
 
 function crearTarjeta(noticia){
 
-return `
+  return `
 
-<article class="news-card">
+    <article class="news-card">
 
-<div class="news-image">
+      <div class="news-image">
 
-<img
-src="${noticia.imagen}"
-alt="${noticia.titulo}"
-loading="lazy"
->
+        <img
+          src="${noticia.imagen}"
+          alt="${noticia.titulo}"
+          loading="lazy"
+        >
 
-</div>
+      </div>
 
-<div class="news-content">
+      <div class="photo-credit">
 
-<span class="category">
-${noticia.categoria}
-</span>
+        Foto:
+        <a
+          href="${noticia.fuenteImagen}"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ${noticia.autorImagen}
+        </a>
 
-<h3>
-${noticia.titulo}
-</h3>
+        · ${noticia.licencia}
 
-<p>
-${noticia.descripcion}
-</p>
+      </div>
 
-<div class="date">
-${noticia.fecha}
-</div>
+      <div class="news-content">
 
-<a
-href="#"
-class="read"
-onclick="abrirNoticia('${noticia.id}');return false"
->
-Leer noticia →
-</a>
+        <span class="category">
+          ${noticia.categoria}
+        </span>
 
-</div>
+        <h3>
+          ${noticia.titulo}
+        </h3>
 
-</article>
+        <p>
+          ${noticia.descripcion}
+        </p>
 
-`;
+        <div class="date">
+          ${noticia.fecha}
+        </div>
+
+        <a
+          href="#"
+          class="read"
+          onclick="abrirNoticia('${noticia.id}');return false"
+        >
+          Leer noticia →
+        </a>
+
+      </div>
+
+    </article>
+
+  `;
 
 }
 
 
-/* MOSTRAR TODAS LAS NOTICIAS */
-
-newsGrid.innerHTML = noticias
-.map(crearTarjeta)
-.join("");
+newsGrid.innerHTML =
+  noticias.map(crearTarjeta).join("");
 
 
-/* CARRUSEL */
+/* =========================
+   CARRUSEL
+========================= */
 
-const destacadas = noticias.slice(0,3);
+const destacadas =
+  noticias.slice(0,3);
 
-hero.innerHTML = destacadas
-.map((noticia,index)=>`
 
-<div class="slide ${index === 0 ? "active" : ""}">
+hero.innerHTML =
 
-<img
-src="${noticia.imagen}"
-alt="${noticia.titulo}"
->
+  destacadas.map((noticia,index)=>`
 
-<div class="slide-content">
+    <div class="slide ${index === 0 ? "active" : ""}">
 
-<span class="tag">
-${noticia.categoria}
-</span>
+      <img
+        src="${noticia.imagen}"
+        alt="${noticia.titulo}"
+      >
 
-<h1>
-${noticia.titulo}
-</h1>
+      <div class="slide-content">
 
-<p>
-${noticia.descripcion}
-</p>
+        <span class="tag">
+          ${noticia.categoria}
+        </span>
 
-<a
-href="#"
-class="read"
-onclick="abrirNoticia('${noticia.id}');return false"
->
-Leer noticia →
-</a>
+        <h1>
+          ${noticia.titulo}
+        </h1>
 
-</div>
+        <p>
+          ${noticia.descripcion}
+        </p>
 
-</div>
+        <a
+          href="#"
+          class="read"
+          onclick="abrirNoticia('${noticia.id}');return false"
+        >
+          Leer noticia →
+        </a>
 
-`)
-.join("")
-+
+      </div>
 
-`
+    </div>
 
-<div class="arrows">
+  `).join("")
 
-<button class="arrow" id="prev">
-‹
-</button>
+  +
 
-<button class="arrow" id="next">
-›
-</button>
+  `
 
-</div>
+    <div class="arrows">
 
-`;
+      <button
+        class="arrow"
+        id="prev"
+      >
+        ‹
+      </button>
+
+      <button
+        class="arrow"
+        id="next"
+      >
+        ›
+      </button>
+
+    </div>
+
+  `;
 
 
 let currentSlide = 0;
 
-const slides = [
-...document.querySelectorAll(".slide")
-];
+const slides =
+  [...document.querySelectorAll(".slide")];
 
 
 function mostrarSlide(numero){
 
-slides[currentSlide]
-.classList
-.remove("active");
+  slides[currentSlide]
+    .classList
+    .remove("active");
 
-currentSlide =
-(numero + slides.length) %
-slides.length;
+  currentSlide =
+    (numero + slides.length)
+    % slides.length;
 
-slides[currentSlide]
-.classList
-.add("active");
+  slides[currentSlide]
+    .classList
+    .add("active");
 
 }
 
 
 document
-.getElementById("next")
-.onclick = () =>
-mostrarSlide(currentSlide + 1);
+  .getElementById("next")
+  .onclick =
+  () => mostrarSlide(currentSlide + 1);
 
 
 document
-.getElementById("prev")
-.onclick = () =>
-mostrarSlide(currentSlide - 1);
+  .getElementById("prev")
+  .onclick =
+  () => mostrarSlide(currentSlide - 1);
 
 
 setInterval(
-() => mostrarSlide(currentSlide + 1),
-5500
+  () => mostrarSlide(currentSlide + 1),
+  5500
 );
 
 
-/* BALÓN DE ORO */
+/* =========================
+   BALÓN DE ORO
+========================= */
 
 const balonOro =
-noticias.find(
-noticia =>
-noticia.id === "balon-oro-2026"
-);
+  noticias.find(
+    noticia =>
+      noticia.id === "balon-oro-2026"
+  );
 
 
 document
-.getElementById("ballon-image")
-.src = balonOro.imagen;
+  .getElementById("ballon-image")
+  .src =
+  balonOro.imagen;
 
 
 document
-.getElementById("ballon-title")
-.textContent = balonOro.titulo;
+  .getElementById("ballon-title")
+  .textContent =
+  balonOro.titulo;
 
 
 document
-.getElementById("ballon-description")
-.textContent = balonOro.descripcion;
+  .getElementById("ballon-description")
+  .textContent =
+  balonOro.descripcion;
 
 
 document
-.getElementById("ballon-link")
-.onclick = function(event){
+  .getElementById("ballon-credit")
+  .innerHTML = `
 
-event.preventDefault();
+    Foto:
 
-abrirNoticia(balonOro.id);
+    <a
+      href="${balonOro.fuenteImagen}"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      ${balonOro.autorImagen}
+    </a>
 
-};
+    · ${balonOro.licencia}
+
+  `;
 
 
-/* ABRIR NOTICIA */
+document
+  .getElementById("ballon-link")
+  .onclick =
+  function(event){
+
+    event.preventDefault();
+
+    abrirNoticia(balonOro.id);
+
+  };
+
+
+/* =========================
+   CRÉDITOS GENERALES
+========================= */
+
+creditsList.innerHTML =
+  noticias.map(noticia => `
+
+    <p>
+
+      <strong>
+        ${noticia.categoria}:
+      </strong>
+
+      ${noticia.autorImagen}
+
+      ·
+
+      <a
+        href="${noticia.fuenteImagen}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Wikimedia Commons
+      </a>
+
+      · ${noticia.licencia}
+
+    </p>
+
+  `).join("");
+
+
+/* =========================
+   ABRIR NOTICIA
+========================= */
 
 function abrirNoticia(id){
 
-const noticia =
-noticias.find(
-n => n.id === id
-);
+  const noticia =
+    noticias.find(
+      n => n.id === id
+    );
 
-if(!noticia){
-return;
+  if(!noticia){
+    return;
+  }
+
+
+  home.style.display =
+    "none";
+
+
+  articlePage.classList.add(
+    "active"
+  );
+
+
+  articlePage.innerHTML = `
+
+    <span class="category">
+      ${noticia.categoria}
+    </span>
+
+    <h1 class="article-title">
+      ${noticia.titulo}
+    </h1>
+
+    <div class="date">
+      ${noticia.fecha} · MIN45
+    </div>
+
+    <img
+      class="article-image"
+      src="${noticia.imagen}"
+      alt="${noticia.titulo}"
+    >
+
+    <div class="article-credit">
+
+      Foto:
+
+      <a
+        href="${noticia.fuenteImagen}"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ${noticia.autorImagen}
+      </a>
+
+      · ${noticia.licencia}
+
+    </div>
+
+    <div class="article-text">
+
+      ${noticia.contenido}
+
+    </div>
+
+    <a
+      href="#"
+      class="back"
+      onclick="volverInicio();return false"
+    >
+      ← Volver a todas las noticias
+    </a>
+
+  `;
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+
+  history.replaceState(
+    null,
+    "",
+    "#noticia-" + id
+  );
+
 }
 
 
-home.style.display = "none";
-
-articlePage.classList.add("active");
-
-
-articlePage.innerHTML = `
-
-<span class="category">
-${noticia.categoria}
-</span>
-
-<h1 class="article-title">
-${noticia.titulo}
-</h1>
-
-<div class="date">
-${noticia.fecha} · MIN45
-</div>
-
-<img
-class="article-image"
-src="${noticia.imagen}"
-alt="${noticia.titulo}"
->
-
-<div class="article-text">
-
-${noticia.contenido}
-
-</div>
-
-<a
-href="#"
-class="back"
-onclick="volverInicio();return false"
->
-← Volver a todas las noticias
-</a>
-
-`;
-
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-
-history.replaceState(
-null,
-"",
-"#noticia-" + id
-);
-
-}
-
-
-/* VOLVER A LA PORTADA */
+/* =========================
+   VOLVER
+========================= */
 
 function volverInicio(){
 
-articlePage.classList.remove("active");
+  articlePage.classList.remove(
+    "active"
+  );
 
-home.style.display = "block";
+  home.style.display =
+    "block";
 
-history.replaceState(
-null,
-"",
-location.pathname
-);
+  history.replaceState(
+    null,
+    "",
+    location.pathname
+  );
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
+
 
 </script>
 
