@@ -1,1485 +1,1640 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPEhtml>
+<htmllang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<metacharset="UTF-8">
+<metaname="viewport"content="width=device-width,initial-scale=1.0">
 
-<meta name="description" content="MIN45 - Noticias de fútbol, LaLiga, Barça, Real Madrid, fichajes y fútbol internacional.">
+<title>MIN45—Noticiasdefútbol</title>
+<metaname="description"content="MIN45:actualidad,noticias,análisisyprotagonistasdelfútbol.">
+<metaname="theme-color"content="#0b0b0b">
 
-<title>MIN45 | Noticias de fútbol</title>
+<linkrel="preconnect"href="https://fonts.googleapis.com">
+<linkrel="preconnect"href="https://fonts.gstatic.com"crossorigin>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<linkhref="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"rel="stylesheet">
 
 <style>
-
-:root{
-  --red:#e10600;
-  --black:#080808;
-  --light:#f4f4f4;
-  --gray:#777;
-}
-
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-  font-family:Inter,Arial,sans-serif;
-  background:var(--light);
-  color:#111;
+background:#f5f5f5;
+color:#111;
+font-family:"Inter",sans-serif;
+line-height:1.6;
+}
+
+body.article-open{
+background:#fff;
 }
 
 a{
-  text-decoration:none;
-  color:inherit;
+color:inherit;
+text-decoration:none;
 }
 
-
-/* =========================
-   CABECERA
-========================= */
-
-.top{
-  background:#080808;
-  color:white;
-  border-bottom:1px solid #222;
+img{
+display:block;
+width:100%;
 }
 
-.top-inner{
-  max-width:1250px;
-  margin:auto;
-  padding:15px 22px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+button{
+font-family:inherit;
+}
+
+/*=========================
+HEADER
+=========================*/
+
+header{
+background:#080808;
+color:white;
+position:sticky;
+top:0;
+z-index:1000;
+border-bottom:3pxsolid#e10600;
+}
+
+.header-inner{
+max-width:1250px;
+margin:auto;
+min-height:76px;
+padding:022px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:25px;
 }
 
 .logo{
-  font-family:"Barlow Condensed",sans-serif;
-  font-size:48px;
-  font-weight:900;
-  letter-spacing:-2px;
+font-family:"BarlowCondensed",sans-serif;
+font-size:44px;
+font-weight:800;
+letter-spacing:-1px;
+line-height:1;
 }
 
-.logo span{
-  color:var(--red);
+.logospan{
+color:#e10600;
 }
 
-.status{
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1px;
+nav{
+display:flex;
+align-items:center;
+gap:25px;
+font-size:13px;
+font-weight:700;
+text-transform:uppercase;
 }
 
-.status b{
-  color:var(--red);
+nava{
+color:#ddd;
+transition:.2sease;
 }
 
-
-/* =========================
-   MENÚ
-========================= */
-
-.nav{
-  background:#101010;
-  color:white;
-  position:sticky;
-  top:0;
-  z-index:20;
-  border-bottom:3px solid var(--red);
+nava:hover{
+color:#fff;
 }
 
-.nav-inner{
-  max-width:1250px;
-  margin:auto;
-  display:flex;
-  overflow:auto;
-  padding:0 12px;
-}
-
-.nav a{
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:.6px;
-  padding:16px 13px;
-  white-space:nowrap;
-}
-
-.nav a:hover{
-  background:var(--red);
-}
-
-
-/* =========================
-   ÚLTIMA HORA
-========================= */
+/*=========================
+BREAKINGNEWS
+=========================*/
 
 .breaking{
-  background:var(--red);
-  color:white;
+background:#e10600;
+color:#fff;
+overflow:hidden;
 }
 
 .breaking-inner{
-  max-width:1250px;
-  margin:auto;
-  padding:9px 22px;
-  font-size:12px;
-  font-weight:700;
-  display:flex;
-  gap:12px;
-  align-items:center;
+max-width:1250px;
+margin:auto;
+min-height:38px;
+padding:022px;
+display:flex;
+align-items:center;
+gap:15px;
 }
 
 .breaking-label{
-  background:white;
-  color:#111;
-  padding:5px 7px;
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:1px;
+font-family:"BarlowCondensed",sans-serif;
+font-weight:800;
+font-size:17px;
+letter-spacing:.5px;
+white-space:nowrap;
 }
 
-
-/* =========================
-   CONTENIDO
-========================= */
-
-main{
-  max-width:1250px;
-  margin:auto;
-  padding:28px 22px 60px;
+.breaking-text{
+font-size:13px;
+font-weight:600;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
 }
 
+/*=========================
+GENERAL
+=========================*/
 
-/* =========================
-   CARRUSEL
-========================= */
+.container{
+max-width:1250px;
+margin:auto;
+padding:022px;
+}
+
+.section-title{
+margin:55px022px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.section-titleh2{
+font-family:"BarlowCondensed",sans-serif;
+font-size:38px;
+line-height:1;
+text-transform:uppercase;
+font-weight:800;
+}
+
+.section-title.red-line{
+flex:1;
+height:3px;
+background:#e10600;
+margin-top:5px;
+}
+
+/*=========================
+HERO
+=========================*/
 
 .hero{
-  height:500px;
-  background:#000;
-  position:relative;
-  overflow:hidden;
-  border-radius:4px;
+padding-top:25px;
 }
 
-.slide{
-  display:none;
-  height:100%;
-  position:relative;
+.carousel{
+position:relative;
+overflow:hidden;
+background:#111;
+min-height:480px;
 }
 
-.slide.active{
-  display:block;
+.carousel-slide{
+display:none;
+position:relative;
+min-height:480px;
 }
 
-.slide img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:.72;
+.carousel-slide.active{
+display:block;
 }
 
-.slide::after{
-  content:"";
-  position:absolute;
-  inset:35% 0 0;
-  background:linear-gradient(transparent,rgba(0,0,0,.95));
+.carousel-slideimg{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:.72;
 }
 
-.slide-content{
-  position:absolute;
-  z-index:2;
-  left:0;
-  bottom:0;
-  padding:40px;
-  color:white;
-  max-width:850px;
+.carousel-overlay{
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+totop,
+rgba(0,0,0,.95)0%,
+rgba(0,0,0,.6)45%,
+rgba(0,0,0,.15)100%
+);
+}
+
+.carousel-content{
+position:absolute;
+left:45px;
+right:45px;
+bottom:42px;
+color:#fff;
+max-width:850px;
 }
 
 .tag{
-  display:inline-block;
-  background:var(--red);
-  color:white;
-  padding:6px 9px;
-  margin-bottom:9px;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1px;
+display:inline-block;
+background:#e10600;
+color:#fff;
+font-size:11px;
+font-weight:800;
+padding:5px9px;
+margin-bottom:12px;
+text-transform:uppercase;
+letter-spacing:.5px;
 }
 
-.slide h1{
-  font-family:"Barlow Condensed";
-  font-size:52px;
-  line-height:.94;
-  text-transform:uppercase;
+.carousel-contenth1{
+font-family:"BarlowCondensed",sans-serif;
+font-size:clamp(42px,6vw,72px);
+line-height:.95;
+text-transform:uppercase;
+font-weight:800;
+margin-bottom:15px;
 }
 
-.slide p{
-  font-size:13px;
-  line-height:1.5;
-  color:#ddd;
-  margin:10px 0 15px;
+.carousel-contentp{
+max-width:700px;
+color:#ddd;
+font-size:15px;
+margin-bottom:20px;
 }
 
-
-/* =========================
-   BOTONES
-========================= */
-
-.read{
-  display:inline-block;
-  background:#111;
-  color:white;
-  padding:11px 14px;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:.5px;
-  text-transform:uppercase;
+.read-button{
+display:inline-flex;
+align-items:center;
+background:#fff;
+color:#111;
+padding:11px17px;
+font-size:12px;
+font-weight:800;
+text-transform:uppercase;
+transition:.2sease;
 }
 
-.read:hover{
-  background:var(--red);
+.read-button:hover{
+background:#e10600;
+color:#fff;
 }
 
-
-/* =========================
-   FLECHAS
-========================= */
-
-.arrows{
-  position:absolute;
-  z-index:4;
-  right:24px;
-  bottom:25px;
-  display:flex;
-  gap:6px;
+.carousel-controls{
+position:absolute;
+right:25px;
+bottom:25px;
+display:flex;
+gap:8px;
+z-index:5;
 }
 
-.arrow{
-  width:42px;
-  height:42px;
-  background:#111c;
-  color:white;
-  border:1px solid white;
-  cursor:pointer;
-  font-size:22px;
+.carousel-controlsbutton{
+width:38px;
+height:38px;
+border:1pxsolidrgba(255,255,255,.5);
+background:rgba(0,0,0,.5);
+color:white;
+cursor:pointer;
+font-size:18px;
 }
 
-.arrow:hover{
-  background:var(--red);
+.carousel-controlsbutton:hover{
+background:#e10600;
+border-color:#e10600;
 }
 
-
-/* =========================
-   TÍTULOS
-========================= */
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  border-bottom:3px solid #111;
-  margin:42px 0 18px;
-  padding-bottom:9px;
-}
-
-.section-head h2{
-  font-family:"Barlow Condensed";
-  font-size:34px;
-  text-transform:uppercase;
-}
-
-.section-head h2::before{
-  content:"";
-  display:inline-block;
-  background:var(--red);
-  width:7px;
-  height:27px;
-  margin-right:9px;
-  vertical-align:-4px;
-}
-
-.section-head span{
-  font-size:10px;
-  font-weight:800;
-  color:#888;
-}
-
-
-/* =========================
-   NOTICIAS
-========================= */
+/*=========================
+NEWSGRID
+=========================*/
 
 .news-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
 }
 
 .news-card{
-  background:white;
-  border:1px solid #e2e2e2;
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
-  transition:.2s;
+background:#fff;
+border:1pxsolid#ddd;
+overflow:hidden;
+transition:transform.2sease,box-shadow.2sease;
 }
 
 .news-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 12px 25px #00000012;
+transform:translateY(-4px);
+box-shadow:010px30pxrgba(0,0,0,.08);
 }
 
 .news-image{
-  height:205px;
+position:relative;
+height:230px;
+overflow:hidden;
+background:#ddd;
 }
 
-.news-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.news-imageimg{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform.4sease;
 }
 
-.news-content{
-  padding:17px;
-  display:flex;
-  flex-direction:column;
-  flex:1;
+.news-card:hover.news-imageimg{
+transform:scale(1.04);
+}
+
+.image-credit{
+padding:7px12px;
+background:#fafafa;
+border-top:1pxsolid#eee;
+color:#777;
+font-size:10px;
+line-height:1.4;
+}
+
+.image-credita{
+color:#555;
+text-decoration:underline;
+font-weight:600;
+}
+
+.image-credita:hover{
+color:#e10600;
+}
+
+.news-body{
+padding:20px;
+}
+
+.news-meta{
+color:#777;
+font-size:11px;
+text-transform:uppercase;
+font-weight:700;
+margin-bottom:8px;
+}
+
+.news-cardh3{
+font-family:"BarlowCondensed",sans-serif;
+font-size:29px;
+line-height:1;
+text-transform:uppercase;
+margin-bottom:12px;
+}
+
+.news-cardp{
+color:#555;
+font-size:14px;
+margin-bottom:18px;
+}
+
+.article-link{
+color:#e10600;
+font-size:12px;
+font-weight:800;
+text-transform:uppercase;
+}
+
+.article-link:hover{
+text-decoration:underline;
+}
+
+/*=========================
+FEATURE
+=========================*/
+
+.feature{
+margin-top:55px;
+background:#0b0b0b;
+color:#fff;
+display:grid;
+grid-template-columns:1fr1fr;
+}
+
+.feature-image{
+min-height:380px;
+}
+
+.feature-imageimg{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.feature-content{
+padding:50px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.feature-contenth2{
+font-family:"BarlowCondensed",sans-serif;
+font-size:50px;
+line-height:.95;
+text-transform:uppercase;
+margin-bottom:20px;
+}
+
+.feature-contentp{
+color:#bbb;
+margin-bottom:25px;
+}
+
+/*=========================
+CATEGORIES
+=========================*/
+
+.categories{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:12px;
+margin-bottom:60px;
 }
 
 .category{
-  color:var(--red);
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1px;
+min-height:100px;
+background:#111;
+color:#fff;
+display:flex;
+align-items:flex-end;
+padding:17px;
+font-family:"BarlowCondensed",sans-serif;
+font-size:23px;
+font-weight:700;
+text-transform:uppercase;
+border-bottom:4pxsolid#e10600;
 }
 
-.news-content h3{
-  font-family:"Barlow Condensed";
-  font-size:28px;
-  line-height:1;
-  text-transform:uppercase;
-  margin:7px 0 9px;
+/*=========================
+ARTICLE
+=========================*/
+
+#articleView{
+display:none;
+padding:45px070px;
 }
 
-.news-content p{
-  font-size:12px;
-  line-height:1.55;
-  color:#666;
-  flex:1;
+.article-wrapper{
+max-width:950px;
+margin:auto;
 }
 
-.date{
-  font-size:10px;
-  color:#999;
-  margin-top:12px;
+.back-button{
+border:none;
+background:transparent;
+color:#e10600;
+cursor:pointer;
+font-size:12px;
+font-weight:800;
+text-transform:uppercase;
+margin-bottom:25px;
+padding:0;
 }
 
-.news-content .read{
-  margin-top:13px;
-  align-self:flex-start;
+.article-wrapper.article-category{
+display:inline-block;
+background:#e10600;
+color:#fff;
+padding:6px10px;
+font-size:11px;
+font-weight:800;
+text-transform:uppercase;
+margin-bottom:14px;
 }
 
-
-/* =========================
-   CRÉDITO DE FOTO
-========================= */
-
-.photo-credit{
-  font-size:9px;
-  color:#999;
-  padding:7px 10px;
-  background:#fafafa;
-  border-top:1px solid #eee;
-  line-height:1.4;
+.article-wrapperh1{
+font-family:"BarlowCondensed",sans-serif;
+font-size:clamp(48px,7vw,85px);
+line-height:.92;
+text-transform:uppercase;
+margin-bottom:20px;
 }
 
-.photo-credit a{
-  color:#777;
-  text-decoration:underline;
+.article-info{
+color:#777;
+font-size:12px;
+text-transform:uppercase;
+font-weight:700;
+padding-bottom:22px;
+border-bottom:1pxsolid#ddd;
+margin-bottom:25px;
 }
 
-.photo-credit a:hover{
-  color:var(--red);
+.article-hero{
+width:100%;
+max-height:570px;
+object-fit:cover;
 }
 
-
-/* =========================
-   BALÓN DE ORO
-========================= */
-
-.feature{
-  background:#090909;
-  color:white;
-  padding:28px;
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:28px;
-  align-items:center;
+.article-content{
+font-size:17px;
+line-height:1.85;
+margin-top:30px;
 }
 
-.feature img{
-  width:100%;
-  height:300px;
-  object-fit:cover;
+.article-contentp{
+margin-bottom:25px;
 }
 
-.feature h2{
-  font-family:"Barlow Condensed";
-  font-size:48px;
-  line-height:.94;
-  text-transform:uppercase;
-  margin:9px 0;
+.article-contenth2{
+font-family:"BarlowCondensed",sans-serif;
+font-size:38px;
+text-transform:uppercase;
+line-height:1;
+margin:38px015px;
 }
 
-.feature p{
-  color:#bbb;
-  font-size:13px;
-  line-height:1.6;
-  margin-bottom:15px;
+.article-contentstrong{
+font-weight:800;
 }
 
-.feature .read{
-  background:var(--red);
+.article-image-credit{
+padding:9px12px;
+background:#f5f5f5;
+color:#777;
+font-size:11px;
+margin-bottom:25px;
 }
 
-
-/* =========================
-   CATEGORÍAS
-========================= */
-
-.categories{
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:7px;
+.article-image-credita{
+text-decoration:underline;
+font-weight:700;
 }
 
-.category-box{
-  background:#111;
-  color:white;
-  text-align:center;
-  padding:16px 5px;
-  font-family:"Barlow Condensed";
-  font-size:17px;
-  text-transform:uppercase;
+.article-image-credita:hover{
+color:#e10600;
 }
 
-.category-box:hover{
-  background:var(--red);
-}
-
-
-/* =========================
-   PÁGINA DE NOTICIA
-========================= */
-
-.article-page{
-  display:none;
-  max-width:1000px;
-  margin:auto;
-  background:white;
-  padding:45px 55px 70px;
-  min-height:700px;
-}
-
-.article-page.active{
-  display:block;
-}
-
-.article-title{
-  font-family:"Barlow Condensed";
-  font-size:64px;
-  line-height:.93;
-  text-transform:uppercase;
-  margin:8px 0 12px;
-}
-
-.article-image{
-  width:100%;
-  height:480px;
-  object-fit:cover;
-  margin-top:15px;
-}
-
-.article-text{
-  max-width:760px;
-  margin:30px auto;
-  font-size:16px;
-  line-height:1.8;
-}
-
-.article-text p{
-  margin-bottom:20px;
-}
-
-.article-text h2{
-  font-family:"Barlow Condensed";
-  font-size:34px;
-  text-transform:uppercase;
-  border-left:6px solid var(--red);
-  padding-left:10px;
-  margin:30px 0 12px;
-}
-
-.article-credit{
-  font-size:10px;
-  color:#888;
-  margin-top:8px;
-}
-
-.article-credit a{
-  text-decoration:underline;
-}
-
-.back{
-  display:inline-block;
-  background:#111;
-  color:white;
-  padding:12px 15px;
-  font-size:10px;
-  font-weight:900;
-  text-transform:uppercase;
-}
-
-.back:hover{
-  background:var(--red);
-}
-
-
-/* =========================
-   CRÉDITOS GENERALES
-========================= */
+/*=========================
+IMAGECREDITS
+=========================*/
 
 .credits{
-  background:#111;
-  color:#aaa;
-  padding:30px 22px;
+background:#eee;
+border-top:1pxsolid#ddd;
+padding:35px0;
 }
 
-.credits-inner{
-  max-width:1250px;
-  margin:auto;
+.creditsh2{
+font-family:"BarlowCondensed",sans-serif;
+font-size:34px;
+text-transform:uppercase;
+margin-bottom:15px;
 }
 
-.credits h3{
-  color:white;
-  font-family:"Barlow Condensed";
-  font-size:25px;
-  text-transform:uppercase;
-  margin-bottom:12px;
+.creditsp{
+color:#555;
+font-size:13px;
+margin-bottom:10px;
 }
 
-.credits p{
-  font-size:10px;
-  line-height:1.7;
-  margin-bottom:5px;
+.creditsa{
+color:#333;
+text-decoration:underline;
 }
 
-.credits a{
-  color:#ddd;
-  text-decoration:underline;
+.creditsa:hover{
+color:#e10600;
 }
 
-.credits a:hover{
-  color:white;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
+/*=========================
+FOOTER
+=========================*/
 
 footer{
-  background:#080808;
-  color:#999;
-  padding:35px 22px;
+background:#080808;
+color:#fff;
+padding:45px0;
 }
 
 .footer-inner{
-  max-width:1250px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
+max-width:1250px;
+margin:auto;
+padding:022px;
+display:flex;
+justify-content:space-between;
+gap:30px;
 }
 
 .footer-logo{
-  font-family:"Barlow Condensed";
-  font-size:40px;
-  font-weight:900;
-  color:white;
+font-family:"BarlowCondensed",sans-serif;
+font-size:40px;
+font-weight:800;
 }
 
-.footer-logo span{
-  color:var(--red);
+.footer-logospan{
+color:#e10600;
 }
 
-footer p{
-  font-size:10px;
+.footer-text{
+max-width:550px;
+color:#999;
+font-size:12px;
 }
 
+/*=========================
+RESPONSIVE
+=========================*/
 
-/* =========================
-   MÓVIL
-========================= */
-
-@media(max-width:800px){
-
-  .hero{
-    height:430px;
-  }
-
-  .slide h1{
-    font-size:42px;
-  }
-
-  .news-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .feature{
-    grid-template-columns:1fr;
-  }
-
-  .categories{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .article-page{
-    padding:30px 20px 55px;
-  }
-
-  .article-title{
-    font-size:48px;
-  }
-
-  .article-image{
-    height:330px;
-  }
+@media(max-width:900px){
+.news-grid{
+grid-template-columns:repeat(2,1fr);
 }
 
-
-@media(max-width:520px){
-
-  .top-inner{
-    padding:14px 15px;
-  }
-
-  .logo{
-    font-size:41px;
-  }
-
-  .status{
-    display:none;
-  }
-
-  .nav a{
-    padding:14px 9px;
-    font-size:9px;
-  }
-
-  .breaking-inner{
-    padding:9px 12px;
-    font-size:10px;
-  }
-
-  main{
-    padding:18px 12px 45px;
-  }
-
-  .hero{
-    height:420px;
-  }
-
-  .slide-content{
-    padding:24px 20px;
-  }
-
-  .slide h1{
-    font-size:35px;
-  }
-
-  .slide p{
-    font-size:11px;
-  }
-
-  .news-grid{
-    grid-template-columns:1fr;
-  }
-
-  .news-image{
-    height:220px;
-  }
-
-  .section-head h2{
-    font-size:29px;
-  }
-
-  .section-head span{
-    display:none;
-  }
-
-  .feature{
-    padding:18px;
-  }
-
-  .feature h2{
-    font-size:40px;
-  }
-
-  .categories{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .article-title{
-    font-size:42px;
-  }
-
-  .article-image{
-    height:260px;
-  }
-
-  .article-text{
-    font-size:15px;
-  }
-
-  .footer-inner{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+.categories{
+grid-template-columns:repeat(3,1fr);
 }
 
+.feature{
+grid-template-columns:1fr;
+}
+
+.feature-image{
+min-height:300px;
+}
+}
+
+@media(max-width:650px){
+.header-inner{
+min-height:65px;
+}
+
+.logo{
+font-size:38px;
+}
+
+nav{
+gap:12px;
+font-size:10px;
+}
+
+.breaking-inner{
+min-height:34px;
+}
+
+.breaking-label{
+font-size:14px;
+}
+
+.hero{
+padding-top:15px;
+}
+
+.carousel,
+.carousel-slide{
+min-height:430px;
+}
+
+.carousel-content{
+left:22px;
+right:22px;
+bottom:25px;
+}
+
+.carousel-contenth1{
+font-size:46px;
+}
+
+.carousel-contentp{
+font-size:13px;
+}
+
+.section-title{
+margin-top:40px;
+}
+
+.section-titleh2{
+font-size:31px;
+}
+
+.news-grid{
+grid-template-columns:1fr;
+}
+
+.news-image{
+height:240px;
+}
+
+.feature-content{
+padding:30px;
+}
+
+.feature-contenth2{
+font-size:42px;
+}
+
+.categories{
+grid-template-columns:repeat(2,1fr);
+}
+
+.category{
+min-height:80px;
+font-size:20px;
+}
+
+.article-wrapperh1{
+font-size:55px;
+}
+
+.article-content{
+font-size:16px;
+}
+
+.footer-inner{
+flex-direction:column;
+}
+}
 </style>
 </head>
 
-
 <body>
 
+<!--=========================
+HEADER
+=========================-->
 
-<!-- =========================
-     CABECERA
-========================= -->
+<header>
+<divclass="header-inner">
 
-<header class="top">
+<ahref="#"class="logo"onclick="volverInicio();returnfalse;">
+MIN<span>45</span>
+</a>
 
-  <div class="top-inner">
-
-    <a
-      class="logo"
-      href="#"
-      onclick="volverInicio();return false"
-    >
-      MIN<span>45</span>
-    </a>
-
-    <div class="status">
-      <b>●</b> FÚTBOL · NOTICIAS · ACTUALIDAD
-    </div>
-
-  </div>
-
-</header>
-
-
-<!-- =========================
-     MENÚ
-========================= -->
-
-<nav class="nav">
-
-  <div class="nav-inner">
-
-    <a href="#ultimas">ÚLTIMA HORA</a>
-    <a href="#ultimas">BARÇA</a>
-    <a href="#ultimas">REAL MADRID</a>
-    <a href="#ultimas">FICHAJES</a>
-    <a href="#ultimas">LALIGA</a>
-    <a href="#ultimas">CHAMPIONS</a>
-    <a href="#balonoro">BALÓN DE ORO</a>
-
-  </div>
-
+<nav>
+<ahref="#"onclick="volverInicio();returnfalse;">Inicio</a>
+<ahref="#ultimas">Últimas</a>
+<ahref="#categorias">Categorías</a>
 </nav>
 
+</div>
+</header>
 
-<!-- =========================
-     ÚLTIMA HORA
-========================= -->
+<!--=========================
+BREAKINGNEWS
+=========================-->
 
-<div class="breaking">
-
-  <div class="breaking-inner">
-
-    <span class="breaking-label">
-      ÚLTIMA HORA
-    </span>
-
-    <span>
-      El Barça gana 2-4 al Levante · El Real Madrid vence 4-1 al Rayo
-    </span>
-
-  </div>
-
+<divclass="breaking">
+<divclass="breaking-inner">
+<divclass="breaking-label">ÚLTIMAHORA</div>
+<divclass="breaking-text"id="breakingText">
+Laactualidaddelfútbol,minutoaminuto.
+</div>
+</div>
 </div>
 
+<!--=========================
+HOME
+=========================-->
 
-<!-- =========================
-     PORTADA
-========================= -->
+<mainid="homeView">
 
-<div id="home">
+<divclass="container">
 
-<main>
+<!--HERO-->
 
+<sectionclass="hero">
 
-<!-- CARRUSEL -->
+<divclass="carousel"id="carousel">
 
-<section
-  class="hero"
-  id="hero"
-></section>
+<!--Segeneraautomáticamenteconnoticias.js-->
 
-
-<!-- NOTICIAS -->
-
-<div
-  class="section-head"
-  id="ultimas"
->
-
-  <h2>
-    Últimas noticias
-  </h2>
-
-  <span>
-    MIN45 · ACTUALIDAD
-  </span>
-
+<divclass="carousel-controls">
+<buttononclick="anteriorSlide()"aria-label="Anterior">‹</button>
+<buttononclick="siguienteSlide()"aria-label="Siguiente">›</button>
 </div>
 
-
-<section
-  class="news-grid"
-  id="news-grid"
-></section>
-
-
-<!-- BALÓN DE ORO -->
-
-<div
-  class="section-head"
-  id="balonoro"
->
-
-  <h2>
-    Especial Balón de Oro
-  </h2>
-
-  <span>
-    26 OCTUBRE · LONDRES
-  </span>
-
 </div>
-
-
-<section class="feature">
-
-  <div>
-
-    <img
-      id="ballon-image"
-      alt="Balón de Oro"
-    >
-
-    <div
-      class="photo-credit"
-      id="ballon-credit"
-    ></div>
-
-  </div>
-
-
-  <div>
-
-    <span class="category">
-      BALÓN DE ORO 2026
-    </span>
-
-    <h2 id="ballon-title"></h2>
-
-    <p id="ballon-description"></p>
-
-    <a
-      href="#"
-      class="read"
-      id="ballon-link"
-    >
-      Ver noticia completa →
-    </a>
-
-  </div>
 
 </section>
 
+<!--ÚLTIMASNOTICIAS-->
 
-<!-- CATEGORÍAS -->
+<sectionid="ultimas">
 
-<div class="section-head">
-
-  <h2>
-    MIN45 · Fútbol
-  </h2>
-
-  <span>
-    TODO EL FÚTBOL EN UN SOLO SITIO
-  </span>
-
+<divclass="section-title">
+<h2>Últimasnoticias</h2>
+<divclass="red-line"></div>
 </div>
 
-
-<section class="categories">
-
-  <a
-    class="category-box"
-    href="#ultimas"
-  >
-    Barça
-  </a>
-
-  <a
-    class="category-box"
-    href="#ultimas"
-  >
-    Madrid
-  </a>
-
-  <a
-    class="category-box"
-    href="#ultimas"
-  >
-    Fichajes
-  </a>
-
-  <a
-    class="category-box"
-    href="#ultimas"
-  >
-    LaLiga
-  </a>
-
-  <a
-    class="category-box"
-    href="#ultimas"
-  >
-    Champions
-  </a>
-
-  <a
-    class="category-box"
-    href="#balonoro"
-  >
-    Balón de Oro
-  </a>
+<divclass="news-grid"id="newsGrid"></div>
 
 </section>
 
+<!--BALÓNDEORO-->
+
+<sectionclass="feature"id="balonOroFeature">
+
+<divclass="feature-image">
+<img
+id="featureImage"
+src=""
+alt="BalóndeOro"
+>
+</div>
+
+<divclass="feature-content">
+
+<spanclass="tag">EspecialMIN45</span>
+
+<h2id="featureTitle">
+BalóndeOro2026
+</h2>
+
+<pid="featureDescription">
+Todalaactualidadsobreloscandidatos,favoritosydebatedelpremioindividualmásimportantedelfútbol.
+</p>
+
+<div>
+<a
+href="#"
+class="read-button"
+id="featureButton"
+>
+Leerespecial→
+</a>
+</div>
+
+</div>
+
+</section>
+
+<!--CATEGORÍAS-->
+
+<sectionid="categorias">
+
+<divclass="section-title">
+<h2>Categorías</h2>
+<divclass="red-line"></div>
+</div>
+
+<divclass="categories">
+
+<ahref="#ultimas"class="category">
+Barça
+</a>
+
+<ahref="#ultimas"class="category">
+RealMadrid
+</a>
+
+<ahref="#ultimas"class="category">
+LaLiga
+</a>
+
+<ahref="#ultimas"class="category">
+Fichajes
+</a>
+
+<ahref="#ultimas"class="category">
+Internacional
+</a>
+
+</div>
+
+</section>
+
+</div>
 
 </main>
 
+<!--=========================
+ARTICLEVIEW
+=========================-->
+
+<mainid="articleView">
+
+<divclass="container">
+
+<articleclass="article-wrapper">
+
+<buttonclass="back-button"onclick="volverInicio()">
+←Volveranoticias
+</button>
+
+<divid="articleContainer"></div>
+
+</article>
+
 </div>
 
+</main>
 
-<!-- =========================
-     NOTICIA COMPLETA
-========================= -->
+<!--=========================
+IMAGECREDITS
+=========================-->
 
-<article
-  class="article-page"
-  id="article-page"
-></article>
+<sectionclass="credits">
 
+<divclass="container">
 
-<!-- =========================
-     CRÉDITOS
-========================= -->
+<h2>Créditosdeimágenes</h2>
 
-<section class="credits">
+<p>
+LasimágenesutilizadasenMIN45procedendeWikimediaCommonsy
+semuestranrespetandolainformacióndeautoríaylicenciaindicada
+encadaarchivo.
+</p>
 
-  <div class="credits-inner">
+<divid="creditsList"></div>
 
-    <h3>
-      Créditos de imágenes
-    </h3>
-
-    <div id="credits-list"></div>
-
-  </div>
+</div>
 
 </section>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!--=========================
+FOOTER
+=========================-->
 
 <footer>
 
-  <div class="footer-inner">
+<divclass="footer-inner">
 
-    <div class="footer-logo">
-      MIN<span>45</span>
-    </div>
+<divclass="footer-logo">
+MIN<span>45</span>
+</div>
 
-    <p>
-      Noticias de fútbol · MIN45
-    </p>
+<divclass="footer-text">
+MIN45esunproyectoindependientedeinformaciónfutbolística.
+Noticias,actualidad,análisisyprotagonistasdelfútbol.
+<br><br>
+©2026MIN45.Todoslosderechosreservados.
+</div>
 
-  </div>
+</div>
 
 </footer>
 
 
-<!-- =========================
-     CARGAMOS NOTICIAS
-========================= -->
+<!--=========================
+JAVASCRIPT
+=========================-->
 
-<script src="noticias.js"></script>
-
+<scriptsrc="noticias.js"></script>
 
 <script>
 
+letslideActual=0;
+letintervaloCarousel;
 
-/* =========================
-   VARIABLES
-========================= */
+/*=========================
+UTILIDADES
+=========================*/
 
-const newsGrid =
-  document.getElementById("news-grid");
+functionescaparHTML(texto){
 
-const hero =
-  document.getElementById("hero");
+if(texto===undefined||texto===null){
+return"";
+}
 
-const home =
-  document.getElementById("home");
-
-const articlePage =
-  document.getElementById("article-page");
-
-const creditsList =
-  document.getElementById("credits-list");
-
-
-/* =========================
-   TARJETAS
-========================= */
-
-function crearTarjeta(noticia){
-
-  return `
-
-    <article class="news-card">
-
-      <div class="news-image">
-
-        <img
-          src="${noticia.imagen}"
-          alt="${noticia.titulo}"
-          loading="lazy"
-        >
-
-      </div>
-
-      <div class="photo-credit">
-
-        Foto:
-        <a
-          href="${noticia.fuenteImagen}"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ${noticia.autorImagen}
-        </a>
-
-        · ${noticia.licencia}
-
-      </div>
-
-      <div class="news-content">
-
-        <span class="category">
-          ${noticia.categoria}
-        </span>
-
-        <h3>
-          ${noticia.titulo}
-        </h3>
-
-        <p>
-          ${noticia.descripcion}
-        </p>
-
-        <div class="date">
-          ${noticia.fecha}
-        </div>
-
-        <a
-          href="#"
-          class="read"
-          onclick="abrirNoticia('${noticia.id}');return false"
-        >
-          Leer noticia →
-        </a>
-
-      </div>
-
-    </article>
-
-  `;
+returnString(texto)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
 
 }
 
 
-newsGrid.innerHTML =
-  noticias.map(crearTarjeta).join("");
+functionobtenerNoticias(){
 
+if(typeofnoticias!=="undefined"&&Array.isArray(noticias)){
+returnnoticias;
+}
 
-/* =========================
-   CARRUSEL
-========================= */
-
-const destacadas =
-  noticias.slice(0,3);
-
-
-hero.innerHTML =
-
-  destacadas.map((noticia,index)=>`
-
-    <div class="slide ${index === 0 ? "active" : ""}">
-
-      <img
-        src="${noticia.imagen}"
-        alt="${noticia.titulo}"
-      >
-
-      <div class="slide-content">
-
-        <span class="tag">
-          ${noticia.categoria}
-        </span>
-
-        <h1>
-          ${noticia.titulo}
-        </h1>
-
-        <p>
-          ${noticia.descripcion}
-        </p>
-
-        <a
-          href="#"
-          class="read"
-          onclick="abrirNoticia('${noticia.id}');return false"
-        >
-          Leer noticia →
-        </a>
-
-      </div>
-
-    </div>
-
-  `).join("")
-
-  +
-
-  `
-
-    <div class="arrows">
-
-      <button
-        class="arrow"
-        id="prev"
-      >
-        ‹
-      </button>
-
-      <button
-        class="arrow"
-        id="next"
-      >
-        ›
-      </button>
-
-    </div>
-
-  `;
-
-
-let currentSlide = 0;
-
-const slides =
-  [...document.querySelectorAll(".slide")];
-
-
-function mostrarSlide(numero){
-
-  slides[currentSlide]
-    .classList
-    .remove("active");
-
-  currentSlide =
-    (numero + slides.length)
-    % slides.length;
-
-  slides[currentSlide]
-    .classList
-    .add("active");
+return[];
 
 }
 
 
-document
-  .getElementById("next")
-  .onclick =
-  () => mostrarSlide(currentSlide + 1);
+/*=========================
+CREDITOS
+=========================*/
 
+functiongenerarCreditoImagen(noticia,clase="image-credit"){
 
-document
-  .getElementById("prev")
-  .onclick =
-  () => mostrarSlide(currentSlide - 1);
-
-
-setInterval(
-  () => mostrarSlide(currentSlide + 1),
-  5500
+constautor=escaparHTML(
+noticia.autorImagen||"Autornoindicado"
 );
 
+constlicencia=escaparHTML(
+noticia.licencia||"Licencianoindicada"
+);
 
-/* =========================
-   BALÓN DE ORO
-========================= */
+constfuente=noticia.fuenteImagenUrl
+?`
+<a
+href="${escaparHTML(noticia.fuenteImagenUrl)}"
+target="_blank"
+rel="noopenernoreferrer"
+>
+WikimediaCommons
+</a>
+`
+:"WikimediaCommons";
 
-const balonOro =
-  noticias.find(
-    noticia =>
-      noticia.id === "balon-oro-2026"
-  );
-
-
-document
-  .getElementById("ballon-image")
-  .src =
-  balonOro.imagen;
-
-
-document
-  .getElementById("ballon-title")
-  .textContent =
-  balonOro.titulo;
-
-
-document
-  .getElementById("ballon-description")
-  .textContent =
-  balonOro.descripcion;
-
-
-document
-  .getElementById("ballon-credit")
-  .innerHTML = `
-
-    Foto:
-
-    <a
-      href="${balonOro.fuenteImagen}"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      ${balonOro.autorImagen}
-    </a>
-
-    · ${balonOro.licencia}
-
-  `;
-
-
-document
-  .getElementById("ballon-link")
-  .onclick =
-  function(event){
-
-    event.preventDefault();
-
-    abrirNoticia(balonOro.id);
-
-  };
-
-
-/* =========================
-   CRÉDITOS GENERALES
-========================= */
-
-creditsList.innerHTML =
-  noticias.map(noticia => `
-
-    <p>
-
-      <strong>
-        ${noticia.categoria}:
-      </strong>
-
-      ${noticia.autorImagen}
-
-      ·
-
-      <a
-        href="${noticia.fuenteImagen}"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Wikimedia Commons
-      </a>
-
-      · ${noticia.licencia}
-
-    </p>
-
-  `).join("");
-
-
-/* =========================
-   ABRIR NOTICIA
-========================= */
-
-function abrirNoticia(id){
-
-  const noticia =
-    noticias.find(
-      n => n.id === id
-    );
-
-  if(!noticia){
-    return;
-  }
-
-
-  home.style.display =
-    "none";
-
-
-  articlePage.classList.add(
-    "active"
-  );
-
-
-  articlePage.innerHTML = `
-
-    <span class="category">
-      ${noticia.categoria}
-    </span>
-
-    <h1 class="article-title">
-      ${noticia.titulo}
-    </h1>
-
-    <div class="date">
-      ${noticia.fecha} · MIN45
-    </div>
-
-    <img
-      class="article-image"
-      src="${noticia.imagen}"
-      alt="${noticia.titulo}"
-    >
-
-    <div class="article-credit">
-
-      Foto:
-
-      <a
-        href="${noticia.fuenteImagen}"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        ${noticia.autorImagen}
-      </a>
-
-      · ${noticia.licencia}
-
-    </div>
-
-    <div class="article-text">
-
-      ${noticia.contenido}
-
-    </div>
-
-    <a
-      href="#"
-      class="back"
-      onclick="volverInicio();return false"
-    >
-      ← Volver a todas las noticias
-    </a>
-
-  `;
-
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
-
-
-  history.replaceState(
-    null,
-    "",
-    "#noticia-" + id
-  );
+return`
+<divclass="${clase}">
+Foto:${autor}·${licencia}·${fuente}
+</div>
+`;
 
 }
 
 
-/* =========================
-   VOLVER
-========================= */
+/*=========================
+TARJETAS
+=========================*/
 
-function volverInicio(){
+functioncrearTarjeta(noticia){
 
-  articlePage.classList.remove(
-    "active"
-  );
+return`
+<articleclass="news-card">
 
-  home.style.display =
-    "block";
+<divclass="news-image">
 
-  history.replaceState(
-    null,
-    "",
-    location.pathname
-  );
+<img
+src="${escaparHTML(noticia.imagen)}"
+alt="${escaparHTML(noticia.titulo)}"
+loading="lazy"
+>
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+</div>
+
+${generarCreditoImagen(noticia)}
+
+<divclass="news-body">
+
+<divclass="news-meta">
+${escaparHTML(noticia.categoria)}
+·
+${escaparHTML(noticia.fecha)}
+</div>
+
+<h3>
+${escaparHTML(noticia.titulo)}
+</h3>
+
+<p>
+${escaparHTML(noticia.resumen)}
+</p>
+
+<a
+href="#"
+class="article-link"
+onclick="abrirNoticia('${escaparHTML(noticia.id)}');returnfalse;"
+>
+Leernoticia→
+</a>
+
+</div>
+
+</article>
+`;
 
 }
 
+
+/*=========================
+RENDERNOTICIAS
+=========================*/
+
+functionrenderNoticias(){
+
+constlista=obtenerNoticias();
+
+constgrid=document.getElementById("newsGrid");
+
+if(!grid){
+return;
+}
+
+grid.innerHTML="";
+
+lista.forEach(noticia=>{
+
+grid.innerHTML+=crearTarjeta(noticia);
+
+});
+
+}
+
+
+/*=========================
+CAROUSEL
+=========================*/
+
+functionrenderCarousel(){
+
+constlista=obtenerNoticias();
+
+constcarousel=document.getElementById("carousel");
+
+if(!carousel||lista.length===0){
+return;
+}
+
+constnoticiasHero=lista.slice(0,3);
+
+lethtml="";
+
+noticiasHero.forEach((noticia,index)=>{
+
+html+=`
+<divclass="carousel-slide${index===0?"active":""}">
+
+<img
+src="${escaparHTML(noticia.imagen)}"
+alt="${escaparHTML(noticia.titulo)}"
+>
+
+<divclass="carousel-overlay"></div>
+
+<divclass="carousel-content">
+
+<spanclass="tag">
+${escaparHTML(noticia.categoria)}
+</span>
+
+<h1>
+${escaparHTML(noticia.titulo)}
+</h1>
+
+<p>
+${escaparHTML(noticia.resumen)}
+</p>
+
+<a
+href="#"
+class="read-button"
+onclick="abrirNoticia('${escaparHTML(noticia.id)}');returnfalse;"
+>
+Leernoticia→
+</a>
+
+</div>
+
+</div>
+`;
+
+});
+
+html+=`
+<divclass="carousel-controls">
+<buttononclick="anteriorSlide()"aria-label="Anterior">‹</button>
+<buttononclick="siguienteSlide()"aria-label="Siguiente">›</button>
+</div>
+`;
+
+carousel.innerHTML=html;
+
+iniciarCarousel();
+
+}
+
+
+functionmostrarSlide(numero){
+
+constslides=document.querySelectorAll(".carousel-slide");
+
+if(!slides.length){
+return;
+}
+
+if(numero>=slides.length){
+slideActual=0;
+}
+
+if(numero<0){
+slideActual=slides.length-1;
+}
+
+slides.forEach(slide=>{
+slide.classList.remove("active");
+});
+
+slides[slideActual].classList.add("active");
+
+}
+
+
+functionsiguienteSlide(){
+
+constslides=document.querySelectorAll(".carousel-slide");
+
+if(!slides.length){
+return;
+}
+
+slideActual++;
+
+if(slideActual>=slides.length){
+slideActual=0;
+}
+
+mostrarSlide(slideActual);
+
+reiniciarCarousel();
+
+}
+
+
+functionanteriorSlide(){
+
+constslides=document.querySelectorAll(".carousel-slide");
+
+if(!slides.length){
+return;
+}
+
+slideActual--;
+
+if(slideActual<0){
+slideActual=slides.length-1;
+}
+
+mostrarSlide(slideActual);
+
+reiniciarCarousel();
+
+}
+
+
+functioniniciarCarousel(){
+
+clearInterval(intervaloCarousel);
+
+intervaloCarousel=setInterval(()=>{
+
+siguienteSlide();
+
+},6000);
+
+}
+
+
+functionreiniciarCarousel(){
+
+clearInterval(intervaloCarousel);
+
+intervaloCarousel=setInterval(()=>{
+
+siguienteSlide();
+
+},6000);
+
+}
+
+
+/*=========================
+BREAKINGNEWS
+=========================*/
+
+functionrenderBreaking(){
+
+constlista=obtenerNoticias();
+
+constelemento=document.getElementById("breakingText");
+
+if(!elemento||!lista.length){
+return;
+}
+
+elemento.textContent=
+lista[0].titulo;
+
+}
+
+
+/*=========================
+FEATUREBALONDEORO
+=========================*/
+
+functionrenderFeature(){
+
+constlista=obtenerNoticias();
+
+constnoticia=lista.find(
+item=>item.id==="balon-oro-2026"
+);
+
+if(!noticia){
+return;
+}
+
+constimagen=document.getElementById("featureImage");
+consttitulo=document.getElementById("featureTitle");
+constdescripcion=document.getElementById("featureDescription");
+constboton=document.getElementById("featureButton");
+
+if(imagen){
+imagen.src=noticia.imagen;
+imagen.alt=noticia.titulo;
+}
+
+if(titulo){
+titulo.textContent=noticia.titulo;
+}
+
+if(descripcion){
+descripcion.textContent=noticia.resumen;
+}
+
+if(boton){
+
+boton.onclick=function(e){
+
+e.preventDefault();
+
+abrirNoticia(noticia.id);
+
+};
+
+}
+
+}
+
+
+/*=========================
+CREDITOSGENERALES
+=========================*/
+
+functionrenderCreditos(){
+
+constlista=obtenerNoticias();
+
+constcontenedor=document.getElementById("creditsList");
+
+if(!contenedor){
+return;
+}
+
+contenedor.innerHTML="";
+
+lista.forEach(noticia=>{
+
+constautor=escaparHTML(
+noticia.autorImagen||"Autornoindicado"
+);
+
+constlicencia=escaparHTML(
+noticia.licencia||"Licencianoindicada"
+);
+
+consttitulo=escaparHTML(
+noticia.titulo
+);
+
+constenlace=noticia.fuenteImagenUrl
+?`
+<a
+href="${escaparHTML(noticia.fuenteImagenUrl)}"
+target="_blank"
+rel="noopenernoreferrer"
+>
+VerarchivoenWikimediaCommons
+</a>
+`
+:"WikimediaCommons";
+
+contenedor.innerHTML+=`
+<p>
+<strong>${titulo}</strong><br>
+Autor:${autor}<br>
+Licencia:${licencia}<br>
+${enlace}
+</p>
+`;
+
+});
+
+}
+
+
+/*=========================
+ABRIRNOTICIA
+=========================*/
+
+functionabrirNoticia(id){
+
+constlista=obtenerNoticias();
+
+constnoticia=lista.find(
+item=>item.id===id
+);
+
+if(!noticia){
+return;
+}
+
+consthome=document.getElementById("homeView");
+constarticle=document.getElementById("articleView");
+constcontainer=document.getElementById("articleContainer");
+
+if(!home||!article||!container){
+return;
+}
+
+letcontenido="";
+
+/*
+Elcontenidodelanoticiaseescribeennoticias.js
+utilizandoHTMLdentrodelapropiedad"contenido".
+*/
+
+contenido=noticia.contenido||`
+<p>
+${escaparHTML(noticia.resumen||"")}
+</p>
+`;
+
+container.innerHTML=`
+
+<spanclass="article-category">
+${escaparHTML(noticia.categoria)}
+</span>
+
+<h1>
+${escaparHTML(noticia.titulo)}
+</h1>
+
+<divclass="article-info">
+${escaparHTML(noticia.fecha)}
+·
+${escaparHTML(noticia.autor||"MIN45")}
+</div>
+
+<img
+class="article-hero"
+src="${escaparHTML(noticia.imagen)}"
+alt="${escaparHTML(noticia.titulo)}"
+>
+
+${generarCreditoImagen(noticia,"article-image-credit")}
+
+<divclass="article-content">
+${contenido}
+</div>
+
+`;
+
+home.style.display="none";
+article.style.display="block";
+
+document.body.classList.add("article-open");
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+history.pushState(
+{noticia:id},
+"",
+"#noticia-"+encodeURIComponent(id)
+);
+
+}
+
+
+/*=========================
+VOLVERALINICIO
+=========================*/
+
+functionvolverInicio(){
+
+consthome=document.getElementById("homeView");
+constarticle=document.getElementById("articleView");
+
+if(!home||!article){
+return;
+}
+
+article.style.display="none";
+home.style.display="block";
+
+document.body.classList.remove("article-open");
+
+history.pushState(
+{},
+"",
+window.location.pathname
+);
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/*=========================
+BOTÓNATRÁSDELNAVEGADOR
+=========================*/
+
+window.addEventListener("popstate",function(){
+
+consthash=window.location.hash;
+
+if(hash.startsWith("#noticia-")){
+
+constid=decodeURIComponent(
+hash.replace("#noticia-","")
+);
+
+abrirNoticia(id);
+
+}else{
+
+constarticle=document.getElementById("articleView");
+consthome=document.getElementById("homeView");
+
+if(article){
+article.style.display="none";
+}
+
+if(home){
+home.style.display="block";
+}
+
+document.body.classList.remove("article-open");
+
+}
+
+});
+
+
+/*=========================
+INICIO
+=========================*/
+
+document.addEventListener("DOMContentLoaded",function(){
+
+renderNoticias();
+
+renderCarousel();
+
+renderBreaking();
+
+renderFeature();
+
+renderCreditos();
+
+/*
+Silapáginaseabredirectamentecon:
+#noticia-id
+semuestraesanoticia.
+*/
+
+consthash=window.location.hash;
+
+if(hash.startsWith("#noticia-")){
+
+constid=decodeURIComponent(
+hash.replace("#noticia-","")
+);
+
+setTimeout(()=>{
+
+abrirNoticia(id);
+
+},100);
+
+}
+
+});
 
 </script>
 
 </body>
 </html>
+###YMUYIMPORTANTE:noticias.js
+
+Paraqueesteindex.htmlencuentrecorrectamentelapáginadecadafoto,encadanoticiatienesquetenerestapropiedad:
+
+fuenteImagenUrl:"URL_DE_LA_PAGINA_DE_WIKIMEDIA_COMMONS",
+LasseisURLsqueestamosusandoson:
+
+//1.BalóndeOro
+fuenteImagenUrl:"https://commons.wikimedia.org/wiki/File:Ballon_d%27Or.png",
+
+//2.LamineYamal
+fuenteImagenUrl:"https://commons.wikimedia.org/wiki/File:LamineYamal_-_FCB_-_Partido_Athletic_Club_vs_FC_Barcelona.jpg",
+
+//3.KylianMbappé
+fuenteImagenUrl:"https://commons.wikimedia.org/wiki/File:Kylian_Mbappe_-_France_v_Norway_-_26_June_2026.jpg",
+
+//4.Estadio
+fuenteImagenUrl:"https://commons.wikimedia.org/wiki/File:Football_stadium_1,_Bezliudivka.JPG",
+
+//5.BradleyBarcola
+fuenteImagenUrl:"https://commons.wikimedia.org/wiki/File:Bradley_Barcola_at_Liverpool_Signing_2026-2027_season.jpg",
+
+//6.TrofeoChampions
+fuenteImagenUrl:"https://commons.wikimedia.org/wiki/File:Champions_league_trophy.jpg",
+LadeBarcola,porejemplo,correspondeaunafichadeWikimediaCommonsqueidentificaaKvvinNastreichcomoautor.
+
+Conestesistema,encadafotoapareceráalgocomo:
+
+Foto:Autor·CCBY-SA4.0·WikimediaCommons
+
+yalpulsar**“WikimediaCommons”seabrirálafichaconcretadelarchivo**,dondeaparecenelautorylascondicionesdelicencia.
+
+NouseslosenlacesSpecial:Redirect/file/...paraloscréditos.Esossirvenparaservirlaimagen,peroparaatribuciónesmuchomejorenlazaralafichadelarchivo.
+
+Siquieres,tambiéntepuedopasarahorael**noticias.jscompletoactualizadoconestas6URLsyametidas**,paraquesimplementesustituyaslosdosarchivosynotengasquetocarnadaamano.
