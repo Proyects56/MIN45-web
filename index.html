@@ -5,10 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MIN45 — Noticias de fútbol</title>
-<meta name="description" content="MIN45 — Noticias, actualidad, resultados y protagonistas del fútbol.">
+
+<meta name="description" content="MIN45, actualidad, noticias, fichajes y análisis del mundo del fútbol.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -18,61 +20,43 @@ margin: 0;
 padding: 0;
 }
 
-html {
-scroll-behavior: smooth;
-}
-
 body {
 font-family: "Inter", sans-serif;
 background: #f5f5f5;
 color: #111;
 }
 
-.topbar {
-background: #050505;
-color: white;
-height: 34px;
-display: flex;
-align-items: center;
-overflow: hidden;
+a {
+text-decoration: none;
+color: inherit;
 }
 
-.topbar-inner {
-max-width: 1250px;
-width: 100%;
-margin: auto;
-padding: 0 20px;
-display: flex;
-align-items: center;
-gap: 12px;
+.topbar {
+background: #111;
+color: white;
+padding: 8px 20px;
 font-size: 12px;
 font-weight: 700;
-text-transform: uppercase;
-}
-
-.breaking {
-color: #ff2020;
 letter-spacing: .5px;
-white-space: nowrap;
+text-align: center;
 }
 
-.header {
+header {
 background: white;
 border-bottom: 1px solid #ddd;
 position: sticky;
 top: 0;
-z-index: 100;
+z-index: 1000;
 }
 
 .nav {
 max-width: 1250px;
 margin: auto;
-min-height: 76px;
-padding: 0 20px;
+height: 82px;
 display: flex;
 align-items: center;
 justify-content: space-between;
-gap: 20px;
+padding: 0 20px;
 }
 
 .logo {
@@ -80,234 +64,191 @@ font-family: "Barlow Condensed", sans-serif;
 font-size: 48px;
 font-weight: 900;
 letter-spacing: -2px;
-cursor: pointer;
+color: #111;
 }
 
 .logo span {
-color: #e50914;
+color: #e30613;
 }
 
 .menu {
 display: flex;
-align-items: center;
-gap: 24px;
-list-style: none;
-}
-
-.menu a {
-text-decoration: none;
+gap: 28px;
 font-size: 13px;
 font-weight: 800;
 text-transform: uppercase;
+}
+
+.menu a {
+color: #111;
 transition: .2s;
 }
 
 .menu a:hover {
-color: #e50914;
+color: #e30613;
 }
 
-.hero {
-max-width: 1250px;
-margin: 28px auto;
-padding: 0 20px;
-}
-
-.carousel {
-position: relative;
-height: 500px;
+.breaking {
+background: #e30613;
+color: white;
 overflow: hidden;
-background: #111;
+white-space: nowrap;
 }
 
-.slide {
-display: none;
-position: relative;
-width: 100%;
-height: 100%;
-}
-
-.slide.active {
-display: block;
-}
-
-.slide img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
-}
-
-.slide::after {
-content: "";
-position: absolute;
-inset: 0;
-background: linear-gradient(
-to top,
-rgba(0,0,0,.88),
-rgba(0,0,0,.2) 60%,
-rgba(0,0,0,.05)
-);
-}
-
-.slide-content {
-position: absolute;
-z-index: 2;
-left: 35px;
-right: 35px;
-bottom: 35px;
-color: white;
-max-width: 850px;
-}
-
-.category {
-display: inline-block;
-background: #e50914;
-color: white;
-padding: 6px 10px;
-font-size: 11px;
-font-weight: 900;
-text-transform: uppercase;
-margin-bottom: 12px;
-}
-
-.slide-content h1 {
-font-family: "Barlow Condensed", sans-serif;
-font-size: clamp(35px, 5vw, 68px);
-line-height: .95;
-text-transform: uppercase;
-margin-bottom: 12px;
-}
-
-.slide-content p {
-font-size: 14px;
-line-height: 1.5;
-max-width: 750px;
-}
-
-.carousel-btn {
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-z-index: 5;
-border: 0;
-width: 45px;
-height: 45px;
-border-radius: 50%;
-background: rgba(0,0,0,.65);
-color: white;
-font-size: 24px;
-cursor: pointer;
-}
-
-.carousel-btn:hover {
-background: #e50914;
-}
-
-.carousel-prev {
-left: 15px;
-}
-
-.carousel-next {
-right: 15px;
-}
-
-.dots {
-position: absolute;
-bottom: 16px;
-right: 25px;
-z-index: 5;
-display: flex;
-gap: 7px;
-}
-
-.dot {
-width: 9px;
-height: 9px;
-border-radius: 50%;
-background: rgba(255,255,255,.5);
-cursor: pointer;
-}
-
-.dot.active {
-background: #e50914;
-}
-
-main {
+.breaking-inner {
 max-width: 1250px;
 margin: auto;
-padding: 0 20px 50px;
+padding: 10px 20px;
+font-size: 13px;
+font-weight: 700;
+}
+
+.container {
+max-width: 1250px;
+margin: auto;
+padding: 35px 20px 60px;
 }
 
 .section-title {
 display: flex;
 align-items: center;
 justify-content: space-between;
-border-bottom: 4px solid #111;
-margin: 35px 0 22px;
+margin: 0 0 20px;
+border-bottom: 3px solid #111;
+padding-bottom: 8px;
 }
 
 .section-title h2 {
 font-family: "Barlow Condensed", sans-serif;
-font-size: 38px;
+font-size: 30px;
 text-transform: uppercase;
-line-height: 1;
-padding-bottom: 8px;
+color: #111;
 }
 
 .section-title span {
+font-size: 12px;
+font-weight: 800;
+color: #666;
+}
+
+.hero {
+position: relative;
+height: 500px;
+overflow: hidden;
+background: #111;
+margin-bottom: 45px;
+}
+
+.hero-slide {
+position: absolute;
+inset: 0;
+opacity: 0;
+transition: opacity .5s ease;
+}
+
+.hero-slide.active {
+opacity: 1;
+}
+
+.hero-slide img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.hero-slide::after {
+content: "";
+position: absolute;
+inset: 0;
+background: linear-gradient(
+to top,
+rgba(0,0,0,.85),
+rgba(0,0,0,.15)
+);
+}
+
+.slide-content {
+position: absolute;
+left: 35px;
+right: 35px;
+bottom: 30px;
+z-index: 2;
+color: white;
+}
+
+.slide-category {
+display: inline-block;
+background: #e30613;
+padding: 6px 10px;
 font-size: 11px;
 font-weight: 800;
-color: #777;
+margin-bottom: 10px;
+}
+
+.slide-content h1 {
+font-family: "Barlow Condensed", sans-serif;
+font-size: clamp(35px, 5vw, 65px);
+line-height: .95;
+max-width: 900px;
 text-transform: uppercase;
+}
+
+.slide-content p {
+margin-top: 10px;
+font-size: 13px;
+opacity: .85;
+}
+
+.read-more {
+display: inline-block;
+margin-top: 16px;
+color: white;
+border-bottom: 2px solid #e30613;
+padding-bottom: 4px;
+font-size: 12px;
+font-weight: 800;
+text-transform: uppercase;
+cursor: pointer;
 }
 
 .news-grid {
 display: grid;
 grid-template-columns: repeat(3, 1fr);
-gap: 22px;
+gap: 25px;
 }
 
-.card {
+.news-card {
 background: white;
 border: 1px solid #ddd;
 overflow: hidden;
 transition: transform .2s, box-shadow .2s;
 }
 
-.card:hover {
+.news-card:hover {
 transform: translateY(-4px);
-box-shadow: 0 8px 25px rgba(0,0,0,.1);
+box-shadow: 0 10px 25px rgba(0,0,0,.08);
 }
 
-.card-image {
-height: 230px;
-position: relative;
-background: #ddd;
-}
-
-.card-image img {
+.news-image {
 width: 100%;
-height: 100%;
+height: 220px;
 object-fit: cover;
+display: block;
 }
 
-.card-body {
+.news-content {
 padding: 18px;
 }
 
-.card-body .category {
-margin-bottom: 9px;
+.category {
 font-size: 10px;
+font-weight: 900;
+color: #e30613;
+text-transform: uppercase;
+margin-bottom: 8px;
 }
 
-.card-date {
-font-size: 11px;
-color: #888;
-font-weight: 600;
-margin-bottom: 7px;
-}
-
-.card h3 {
+.news-content h3 {
 font-family: "Barlow Condensed", sans-serif;
 font-size: 27px;
 line-height: 1;
@@ -315,219 +256,155 @@ text-transform: uppercase;
 margin-bottom: 10px;
 }
 
-.card p {
-font-size: 13px;
-color: #555;
-line-height: 1.55;
-margin-bottom: 15px;
-}
-
-.read-more {
-color: #e50914;
-text-decoration: none;
-font-size: 12px;
-font-weight: 900;
-text-transform: uppercase;
-cursor: pointer;
-}
-
-.image-credit {
-padding: 8px 18px 13px;
-border-top: 1px solid #eee;
-background: #fafafa;
-color: #777;
-font-size: 9px;
-line-height: 1.45;
-}
-
-.image-credit a {
+.news-content p {
 color: #666;
-text-decoration: underline;
-cursor: pointer;
-}
-
-.image-credit a:hover {
-color: #e50914;
-}
-
-.feature {
-margin-top: 35px;
-background: #111;
-color: white;
-display: grid;
-grid-template-columns: 1fr 1fr;
-}
-
-.feature-image {
-min-height: 360px;
-}
-
-.feature-image img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-.feature-content {
-padding: 45px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-}
-
-.feature-content h2 {
-font-family: "Barlow Condensed", sans-serif;
-font-size: 50px;
-line-height: .95;
-text-transform: uppercase;
-margin-bottom: 15px;
-}
-
-.feature-content p {
-color: #ccc;
-line-height: 1.6;
-font-size: 14px;
-margin-bottom: 20px;
-}
-
-.categories {
-display: grid;
-grid-template-columns: repeat(5, 1fr);
-gap: 10px;
-}
-
-.category-box {
-background: #111;
-color: white;
-padding: 25px 15px;
-text-align: center;
-font-family: "Barlow Condensed", sans-serif;
-font-size: 22px;
-font-weight: 800;
-cursor: pointer;
-transition: .2s;
-}
-
-.category-box:hover {
-background: #e50914;
-}
-
-#articleView {
-display: none;
-background: white;
-padding: 30px;
-margin-top: 30px;
-}
-
-.back-button {
-display: inline-block;
-margin-bottom: 25px;
-cursor: pointer;
-color: #e50914;
-font-size: 12px;
-font-weight: 900;
-text-transform: uppercase;
-}
-
-.article-header {
-max-width: 950px;
-margin: auto;
-}
-
-.article-header h1 {
-font-family: "Barlow Condensed", sans-serif;
-font-size: clamp(45px, 7vw, 82px);
-line-height: .9;
-text-transform: uppercase;
-margin: 12px 0 18px;
-}
-
-.article-meta {
-color: #777;
-font-size: 12px;
-font-weight: 600;
-margin-bottom: 22px;
-}
-
-.article-image {
-max-width: 1100px;
-height: 520px;
-margin: auto;
-}
-
-.article-image img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-.article-credit {
-max-width: 1100px;
-margin: 0 auto 30px;
-padding: 10px;
-background: #f5f5f5;
-font-size: 10px;
-color: #777;
+font-size: 13px;
 line-height: 1.5;
 }
 
-.article-credit a {
-color: #666;
-text-decoration: underline;
-cursor: pointer;
+.news-meta {
+margin-top: 14px;
+display: flex;
+justify-content: space-between;
+font-size: 10px;
+color: #777;
+font-weight: 700;
 }
 
-.article-content {
-max-width: 850px;
-margin: auto;
-font-size: 16px;
-line-height: 1.8;
+.image-credit,
+.article-credit {
+padding: 7px 12px;
+background: #fafafa;
+border-top: 1px solid #eee;
+font-size: 9px;
+line-height: 1.4;
+color: #777;
 }
 
-.article-content p {
-margin-bottom: 20px;
-}
-
-.article-content h2 {
-font-family: "Barlow Condensed", sans-serif;
-font-size: 35px;
-text-transform: uppercase;
-margin: 35px 0 12px;
-line-height: 1;
-}
-
-.credits-section {
-margin-top: 45px;
-background: white;
-padding: 25px;
-border: 1px solid #ddd;
-}
-
-.credits-section h2 {
-font-family: "Barlow Condensed", sans-serif;
-text-transform: uppercase;
-font-size: 30px;
-margin-bottom: 15px;
-}
-
-.credits-section p {
-font-size: 12px;
-color: #666;
-line-height: 1.6;
-margin-bottom: 10px;
-}
-
+.image-credit a,
+.article-credit a,
 .credits-section a {
 color: #555;
 text-decoration: underline;
 cursor: pointer;
 }
 
-footer {
-background: #050505;
+.image-credit a:hover,
+.article-credit a:hover,
+.credits-section a:hover {
+color: #e30613;
+}
+
+.feature {
+margin: 55px 0;
+background: #111;
 color: white;
-padding: 35px 20px;
-margin-top: 45px;
+padding: 35px;
+}
+
+.feature h2 {
+font-family: "Barlow Condensed", sans-serif;
+font-size: 48px;
+text-transform: uppercase;
+line-height: .95;
+margin-bottom: 15px;
+}
+
+.feature p {
+color: #bbb;
+max-width: 750px;
+line-height: 1.6;
+font-size: 14px;
+}
+
+.article-view {
+display: none;
+background: white;
+padding: 30px;
+margin-bottom: 50px;
+}
+
+.article-view.active {
+display: block;
+}
+
+.article-back {
+display: inline-block;
+margin-bottom: 25px;
+color: #111;
+font-size: 12px;
+font-weight: 800;
+text-transform: uppercase;
+cursor: pointer;
+}
+
+.article-category {
+color: #e30613;
+font-size: 12px;
+font-weight: 900;
+margin-bottom: 8px;
+}
+
+.article-title {
+font-family: "Barlow Condensed", sans-serif;
+font-size: clamp(42px, 6vw, 75px);
+line-height: .9;
+text-transform: uppercase;
+margin-bottom: 15px;
+color: #111;
+}
+
+.article-date {
+color: #777;
+font-size: 12px;
+font-weight: 700;
+margin-bottom: 25px;
+}
+
+.article-hero {
+width: 100%;
+max-height: 600px;
+object-fit: cover;
+display: block;
+}
+
+.article-body {
+max-width: 850px;
+margin: 30px auto;
+font-size: 16px;
+line-height: 1.8;
+color: #222;
+}
+
+.article-body p {
+margin-bottom: 20px;
+}
+
+.credits-section {
+margin-top: 60px;
+padding-top: 25px;
+border-top: 3px solid #111;
+}
+
+.credits-section h2 {
+font-family: "Barlow Condensed", sans-serif;
+font-size: 30px;
+text-transform: uppercase;
+margin-bottom: 15px;
+color: #111;
+}
+
+.credits-section p {
+font-size: 12px;
+line-height: 1.7;
+color: #666;
+margin-bottom: 8px;
+}
+
+footer {
+background: #111;
+color: white;
+padding: 40px 20px;
 }
 
 .footer-inner {
@@ -536,7 +413,6 @@ margin: auto;
 display: flex;
 justify-content: space-between;
 gap: 30px;
-flex-wrap: wrap;
 }
 
 .footer-logo {
@@ -546,13 +422,13 @@ font-weight: 900;
 }
 
 .footer-logo span {
-color: #e50914;
+color: #e30613;
 }
 
 footer p {
 color: #999;
-font-size: 11px;
-line-height: 1.5;
+font-size: 12px;
+margin-top: 8px;
 }
 
 @media (max-width: 850px) {
@@ -564,16 +440,8 @@ display: none;
 grid-template-columns: 1fr 1fr;
 }
 
-.feature {
-grid-template-columns: 1fr;
-}
-
-.categories {
-grid-template-columns: repeat(2, 1fr);
-}
-
-.carousel {
-height: 430px;
+.hero {
+height: 420px;
 }
 }
 
@@ -586,34 +454,25 @@ font-size: 40px;
 grid-template-columns: 1fr;
 }
 
-.carousel {
+.hero {
 height: 430px;
 }
 
 .slide-content {
 left: 20px;
 right: 20px;
-bottom: 25px;
 }
 
-.slide-content h1 {
-font-size: 43px;
+.feature {
+padding: 25px;
 }
 
-.feature-content {
-padding: 30px;
+.article-view {
+padding: 20px;
 }
 
-.feature-content h2 {
-font-size: 42px;
-}
-
-#articleView {
-padding: 20px 15px;
-}
-
-.article-image {
-height: 300px;
+.footer-inner {
+flex-direction: column;
 }
 }
 </style>
@@ -622,625 +481,263 @@ height: 300px;
 <body>
 
 <div class="topbar">
-<div class="topbar-inner">
-<span class="breaking">ÚLTIMA HORA</span>
-<span>MIN45 — Toda la actualidad del fútbol</span>
-</div>
+MIN45 · TODA LA ACTUALIDAD DEL FÚTBOL
 </div>
 
-<header class="header">
+<header>
 <nav class="nav">
+<div class="logo">MIN<span>45</span></div>
 
-<div class="logo" onclick="volverInicio()">
-MIN<span>45</span>
-</div>
-
-<ul class="menu">
-<li>
-<a href="#" onclick="volverInicio(); return false;">Inicio</a>
-</li>
-
-<li>
+<div class="menu">
+<a href="#" onclick="mostrarInicio(); return false;">Inicio</a>
 <a href="#noticias">Noticias</a>
-</li>
-
-<li>
-<a href="#categorias">Categorías</a>
-</li>
-
-<li>
+<a href="#balon-oro">Balón de Oro</a>
 <a href="#creditos">Créditos</a>
-</li>
-</ul>
-
+</div>
 </nav>
 </header>
 
-<div id="home">
+<div class="breaking">
+<div class="breaking-inner">
+🔴 ÚLTIMA HORA · TODA LA ACTUALIDAD DEL FÚTBOL EN MIN45
+</div>
+</div>
 
-<section class="hero">
-<div class="carousel" id="carousel"></div>
-</section>
+<main class="container">
 
-<main>
+<div id="inicio">
 
-<div class="section-title" id="noticias">
+<section class="hero" id="hero"></section>
+
+<section id="noticias">
+<div class="section-title">
 <h2>Últimas noticias</h2>
 <span>MIN45</span>
 </div>
 
-<div class="news-grid" id="newsGrid"></div>
-
-<section class="feature">
-
-<div class="feature-image">
-<img
-src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Ballon_d%27Or.png"
-alt="Balón de Oro"
->
-</div>
-
-<div class="feature-content">
-
-<span class="category">ESPECIAL</span>
-
-<h2>
-Todo sobre el Balón de Oro 2026
-</h2>
-
-<p>
-Los grandes nombres del fútbol mundial vuelven a competir por
-uno de los premios individuales más importantes del deporte.
-</p>
-
-<span
-class="read-more"
-onclick="abrirNoticia('balon-oro-2026')"
->
-Leer especial →
-</span>
-
-</div>
-
+<div class="news-grid" id="news-grid"></div>
 </section>
 
-<div class="section-title" id="categorias">
-<h2>Categorías</h2>
-</div>
-
-<div class="categories">
-
-<div
-class="category-box"
-onclick="filtrarCategoria('BARÇA')"
->
-BARÇA
-</div>
-
-<div
-class="category-box"
-onclick="filtrarCategoria('REAL MADRID')"
->
-REAL MADRID
-</div>
-
-<div
-class="category-box"
-onclick="filtrarCategoria('LALIGA')"
->
-LALIGA
-</div>
-
-<div
-class="category-box"
-onclick="filtrarCategoria('FICHAJES')"
->
-FICHAJES
-</div>
-
-<div
-class="category-box"
-onclick="filtrarCategoria('INTERNACIONAL')"
->
-EUROPA
-</div>
-
-</div>
+<section class="feature" id="balon-oro">
+<h2>Balón de Oro 2026</h2>
+<p>
+Toda la actualidad, candidatos, favoritos y grandes protagonistas
+de la carrera por el Balón de Oro.
+</p>
+</section>
 
 <section class="credits-section" id="creditos">
-
 <h2>Créditos de imágenes</h2>
-
-<p>
-Las imágenes utilizadas en MIN45 proceden de Wikimedia Commons
-y se utilizan respetando las licencias indicadas en cada caso.
-</p>
-
-<div id="allCredits"></div>
-
+<div id="credits-list"></div>
 </section>
 
-<section id="articleView">
-
-<div
-class="back-button"
-onclick="volverInicio()"
->
-← Volver a noticias
 </div>
 
-<div id="articleContainer"></div>
+<article class="article-view" id="article-view">
+<div class="article-back" onclick="mostrarInicio()">
+← Volver a todas las noticias
+</div>
 
-</section>
+<div id="article-content"></div>
+</article>
 
 </main>
 
-</div>
-
 <footer>
-
 <div class="footer-inner">
-
 <div>
-
-<div class="footer-logo">
-MIN<span>45</span>
-</div>
-
-<p>
-Actualidad, noticias y protagonistas del fútbol.
-</p>
-
+<div class="footer-logo">MIN<span>45</span></div>
+<p>Noticias y actualidad del mundo del fútbol.</p>
 </div>
 
 <div>
-
 <p>© 2026 MIN45</p>
-<p>Contenido editorial original.</p>
-
 </div>
-
 </div>
-
 </footer>
 
 <script src="noticias.js"></script>
 
 <script>
-
-let slideActual = 0;
-let intervaloCarousel;
-
-/*
-* ABRIR ENLACE EXTERNO
-* Esto evita que el navegador trate el crédito
-* como una navegación interna de MIN45.
-*/
 function abrirEnlaceExterno(url) {
-
-window.open(
-url,
-"_blank",
-"noopener,noreferrer"
-);
-
+window.open(url, "_blank", "noopener,noreferrer");
 }
+
+const hero = document.getElementById("hero");
+const grid = document.getElementById("news-grid");
+const creditsList = document.getElementById("credits-list");
 
 function crearCredito(noticia) {
-
 return `
-<span>
-Foto: ${noticia.autor}
-— ${noticia.licencia}
-—
-
-<a
-href="javascript:void(0)"
-onclick="abrirEnlaceExterno('${noticia.fuente}')"
->
-Wikimedia Commons
+<div class="image-credit">
+Foto: ${noticia.author} ·
+${noticia.license}
+·
+<a href="javascript:void(0)"
+onclick="abrirEnlaceExterno('${noticia.source}')">
+Ver imagen original
 </a>
-
-—
-
-<a
-href="javascript:void(0)"
-onclick="abrirEnlaceExterno('${noticia.licenciaUrl}')"
->
-Ver licencia
+·
+<a href="javascript:void(0)"
+onclick="abrirEnlaceExterno('${noticia.licenseUrl}')">
+Licencia
 </a>
-
-</span>
+</div>
 `;
-
 }
 
-function crearTarjeta(noticia) {
+function cargarHero() {
+hero.innerHTML = noticias.slice(0, 3).map((noticia, index) => `
+<div class="hero-slide ${index === 0 ? "active" : ""}">
+<img src="${noticia.image}" alt="${noticia.title}">
+<div class="slide-content">
+<div class="slide-category">${noticia.category}</div>
+<h1>${noticia.title}</h1>
+<p>${noticia.date}</p>
 
-return `
-<article class="card">
+<div class="read-more"
+onclick="abrirNoticia('${noticia.id}')">
+Leer noticia →
+</div>
+</div>
+</div>
+`).join("");
 
-<div class="card-image">
+let actual = 0;
+const slides = document.querySelectorAll(".hero-slide");
+
+if (slides.length > 1) {
+setInterval(() => {
+slides[actual].classList.remove("active");
+actual = (actual + 1) % slides.length;
+slides[actual].classList.add("active");
+}, 5000);
+}
+}
+
+function cargarNoticias() {
+grid.innerHTML = noticias.map(noticia => `
+<article class="news-card">
 
 <img
-src="${noticia.imagen}"
-alt="${noticia.titulo}"
-loading="lazy"
+class="news-image"
+src="${noticia.image}"
+alt="${noticia.title}"
 >
 
-</div>
+${crearCredito(noticia)}
 
-<div class="card-body">
+<div class="news-content">
+<div class="category">${noticia.category}</div>
 
-<span class="category">
-${noticia.categoria}
-</span>
-
-<div class="card-date">
-${noticia.fecha}
-</div>
-
-<h3>
-${noticia.titulo}
-</h3>
+<h3>${noticia.title}</h3>
 
 <p>
-${noticia.resumen}
+${noticia.content[0]}
 </p>
 
-<span
+<div class="news-meta">
+<span>${noticia.date}</span>
+<span>${noticia.author}</span>
+</div>
+
+<div
 class="read-more"
+style="color:#111; margin-top:15px;"
 onclick="abrirNoticia('${noticia.id}')"
 >
 Leer noticia →
-</span>
-
 </div>
-
-<div class="image-credit">
-${crearCredito(noticia)}
 </div>
 
 </article>
-`;
-
+`).join("");
 }
 
-function renderNoticias(lista = noticias) {
-
-const grid =
-document.getElementById("newsGrid");
-
-grid.innerHTML =
-lista.map(crearTarjeta).join("");
-
-}
-
-function crearCarousel() {
-
-const carousel =
-document.getElementById("carousel");
-
-const destacadas =
-noticias.slice(0, 3);
-
-carousel.innerHTML = `
-
-${destacadas.map((noticia, index) => `
-
-<div
-class="slide ${index === 0 ? "active" : ""}"
->
-
-<img
-src="${noticia.imagen}"
-alt="${noticia.titulo}"
->
-
-<div class="slide-content">
-
-<span class="category">
-${noticia.categoria}
-</span>
-
-<h1>
-${noticia.titulo}
-</h1>
-
+function cargarCreditos() {
+creditsList.innerHTML = noticias.map(noticia => `
 <p>
-${noticia.resumen}
+<strong>${noticia.title}</strong> —
+${noticia.author} · ${noticia.license} ·
+
+<a href="javascript:void(0)"
+onclick="abrirEnlaceExterno('${noticia.source}')">
+Wikimedia Commons
+</a>
+·
+
+<a href="javascript:void(0)"
+onclick="abrirEnlaceExterno('${noticia.licenseUrl}')">
+Licencia
+</a>
 </p>
-
-<span
-class="read-more"
-onclick="abrirNoticia('${noticia.id}')"
-style="
-display:inline-block;
-margin-top:14px;
-color:white;
-"
->
-Leer noticia →
-</span>
-
-</div>
-
-</div>
-
-`).join("")}
-
-<button
-class="carousel-btn carousel-prev"
-onclick="cambiarSlide(-1)"
->
-‹
-</button>
-
-<button
-class="carousel-btn carousel-next"
-onclick="cambiarSlide(1)"
->
-›
-</button>
-
-<div class="dots">
-
-${destacadas.map((_, index) => `
-
-<span
-class="dot ${index === 0 ? "active" : ""}"
-onclick="irSlide(${index})"
-></span>
-
-`).join("")}
-
-</div>
-
-`;
-
-iniciarCarousel();
-
-}
-
-function mostrarSlide(numero) {
-
-const slides =
-document.querySelectorAll(".slide");
-
-const dots =
-document.querySelectorAll(".dot");
-
-if (!slides.length) return;
-
-slideActual =
-(numero + slides.length) %
-slides.length;
-
-slides.forEach((slide, index) => {
-
-slide.classList.toggle(
-"active",
-index === slideActual
-);
-
-});
-
-dots.forEach((dot, index) => {
-
-dot.classList.toggle(
-"active",
-index === slideActual
-);
-
-});
-
-}
-
-function cambiarSlide(direccion) {
-
-mostrarSlide(
-slideActual + direccion
-);
-
-reiniciarCarousel();
-
-}
-
-function irSlide(numero) {
-
-mostrarSlide(numero);
-
-reiniciarCarousel();
-
-}
-
-function iniciarCarousel() {
-
-clearInterval(intervaloCarousel);
-
-intervaloCarousel =
-setInterval(() => {
-
-mostrarSlide(
-slideActual + 1
-);
-
-}, 6000);
-
-}
-
-function reiniciarCarousel() {
-
-iniciarCarousel();
-
+`).join("");
 }
 
 function abrirNoticia(id) {
-
-const noticia =
-noticias.find(
-item => item.id === id
-);
+const noticia = noticias.find(n => n.id === id);
 
 if (!noticia) return;
 
-document.getElementById("home")
-.style.display = "none";
+document.getElementById("inicio").style.display = "none";
 
-const articleView =
-document.getElementById("articleView");
+const article = document.getElementById("article-view");
+article.classList.add("active");
 
-articleView.style.display =
-"block";
+article.querySelector("#article-content").innerHTML = `
+<div class="article-category">${noticia.category}</div>
 
-document.getElementById(
-"articleContainer"
-).innerHTML = `
+<h1 class="article-title">${noticia.title}</h1>
 
-<div class="article-header">
-
-<span class="category">
-${noticia.categoria}
-</span>
-
-<h1>
-${noticia.titulo}
-</h1>
-
-<div class="article-meta">
-${noticia.fecha}
+<div class="article-date">
+${noticia.date} · ${noticia.author}
 </div>
-
-</div>
-
-<div class="article-image">
 
 <img
-src="${noticia.imagen}"
-alt="${noticia.titulo}"
+class="article-hero"
+src="${noticia.image}"
+alt="${noticia.title}"
 >
 
-</div>
-
 <div class="article-credit">
+Foto: ${noticia.author} · ${noticia.license} ·
 
-${crearCredito(noticia)}
+<a href="javascript:void(0)"
+onclick="abrirEnlaceExterno('${noticia.source}')">
+Imagen original
+</a>
+·
 
+<a href="javascript:void(0)"
+onclick="abrirEnlaceExterno('${noticia.licenseUrl}')">
+Licencia
+</a>
 </div>
 
-<div class="article-content">
-
-${noticia.contenido}
-
+<div class="article-body">
+${noticia.content.map(parrafo => `<p>${parrafo}</p>`).join("")}
 </div>
-
 `;
 
 window.scrollTo({
 top: 0,
 behavior: "smooth"
 });
-
 }
 
-function volverInicio() {
-
-document.getElementById(
-"articleView"
-).style.display = "none";
-
-document.getElementById(
-"home"
-).style.display = "block";
+function mostrarInicio() {
+document.getElementById("article-view").classList.remove("active");
+document.getElementById("inicio").style.display = "block";
 
 window.scrollTo({
 top: 0,
 behavior: "smooth"
 });
-
 }
 
-function filtrarCategoria(categoria) {
-
-const filtradas =
-noticias.filter(
-noticia =>
-noticia.categoria === categoria
-);
-
-document.getElementById(
-"noticias"
-).scrollIntoView({
-behavior: "smooth"
-});
-
-renderNoticias(filtradas);
-
-}
-
-function mostrarTodos() {
-
-renderNoticias(noticias);
-
-}
-
-function renderCreditos() {
-
-const container =
-document.getElementById(
-"allCredits"
-);
-
-container.innerHTML =
-noticias.map(noticia => `
-
-<p>
-
-<strong>
-${noticia.titulo}
-</strong>
-
-<br>
-
-Foto:
-${noticia.autor}
-—
-${noticia.licencia}
-—
-
-<a
-href="javascript:void(0)"
-onclick="abrirEnlaceExterno('${noticia.fuente}')"
->
-Página de la imagen en Wikimedia Commons
-</a>
-
-—
-
-<a
-href="javascript:void(0)"
-onclick="abrirEnlaceExterno('${noticia.licenciaUrl}')"
->
-Licencia
-</a>
-
-</p>
-
-`).join("");
-
-}
-
-document.addEventListener(
-"DOMContentLoaded",
-() => {
-
-crearCarousel();
-renderNoticias();
-renderCreditos();
-
-}
-);
-
+cargarHero();
+cargarNoticias();
+cargarCreditos();
 </script>
 
 </body>
