@@ -1,5 +1,9 @@
 const noticias = [
 
+  /* =========================================
+     1. BALÓN DE ORO
+  ========================================= */
+
   {
     id: "balon-oro-2026",
 
@@ -14,7 +18,16 @@ const noticias = [
       "La lista oficial reúne a 30 candidatos, con Lamine Yamal, Mbappé, Kane, Messi y otros grandes nombres del fútbol mundial.",
 
     imagen:
-      "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1400&q=85",
+      "https://commons.wikimedia.org/wiki/Special:Redirect/file/Ballon_d%27Or.png",
+
+    autorImagen:
+      "Pierdisilvestre7",
+
+    licencia:
+      "CC0",
+
+    fuenteImagen:
+      "https://commons.wikimedia.org/wiki/File:Ballon_d%27Or.png",
 
     contenido: `
 
@@ -42,6 +55,10 @@ const noticias = [
   },
 
 
+  /* =========================================
+     2. BARÇA
+  ========================================= */
+
   {
     id: "barca-levante",
 
@@ -56,7 +73,16 @@ const noticias = [
       "El conjunto azulgrana mantiene su pleno de victorias y continúa en lo más alto de LaLiga.",
 
     imagen:
-      "https://images.unsplash.com/photo-1589487391730-58f20eb2c308?auto=format&fit=crop&w=1400&q=85",
+      "https://commons.wikimedia.org/wiki/Special:Redirect/file/LamineYamal_-_FCB_-_Partido_Athletic_Club_vs_FC_Barcelona.jpg",
+
+    autorImagen:
+      "FotosLaLiga",
+
+    licencia:
+      "CC BY-SA 4.0",
+
+    fuenteImagen:
+      "https://commons.wikimedia.org/wiki/File:LamineYamal_-_FCB_-_Partido_Athletic_Club_vs_FC_Barcelona.jpg",
 
     contenido: `
 
@@ -80,6 +106,10 @@ const noticias = [
   },
 
 
+  /* =========================================
+     3. REAL MADRID
+  ========================================= */
+
   {
     id: "madrid-rayo",
 
@@ -94,7 +124,16 @@ const noticias = [
       "El Real Madrid se impuso 4-1 al Rayo Vallecano y volvió a dejar una actuación contundente en LaLiga.",
 
     imagen:
-      "https://images.unsplash.com/photo-1553778263-73a83bab9b0c?auto=format&fit=crop&w=1400&q=85",
+      "https://commons.wikimedia.org/wiki/Special:Redirect/file/Kylian_Mbappe_-_France_v_Norway_-_26_June_2026.jpg",
+
+    autorImagen:
+      "Bryan Berlin / WikiPortraits",
+
+    licencia:
+      "CC BY-SA 4.0",
+
+    fuenteImagen:
+      "https://commons.wikimedia.org/wiki/File:Kylian_Mbappe_-_France_v_Norway_-_26_June_2026.jpg",
 
     contenido: `
 
@@ -118,6 +157,10 @@ const noticias = [
   },
 
 
+  /* =========================================
+     4. LALIGA
+  ========================================= */
+
   {
     id: "barca-laliga",
 
@@ -132,7 +175,16 @@ const noticias = [
       "El conjunto azulgrana continúa con pleno de victorias y se coloca como uno de los grandes protagonistas del inicio de campeonato.",
 
     imagen:
-      "https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1400&q=85",
+      "https://commons.wikimedia.org/wiki/Special:Redirect/file/Football_stadium_1%2C_Bezliudivka.JPG",
+
+    autorImagen:
+      "Kateryna Kovalenko",
+
+    licencia:
+      "CC BY 4.0",
+
+    fuenteImagen:
+      "https://commons.wikimedia.org/wiki/File:Football_stadium_1,_Bezliudivka.JPG",
 
     contenido: `
 
@@ -152,6 +204,10 @@ const noticias = [
   },
 
 
+  /* =========================================
+     5. FICHAJES
+  ========================================= */
+
   {
     id: "mercado-fichajes",
 
@@ -166,7 +222,16 @@ const noticias = [
       "Los grandes clubes europeos ya trabajan en sus próximos movimientos mientras empiezan a aparecer nuevos nombres en las agendas.",
 
     imagen:
-      "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1400&q=85",
+      "https://commons.wikimedia.org/wiki/Special:Redirect/file/Bradley_Barcola_at_Liverpool_Signing_2026-2027_season.jpg",
+
+    autorImagen:
+      "Kvvin Nastreich",
+
+    licencia:
+      "CC BY-SA 4.0",
+
+    fuenteImagen:
+      "https://commons.wikimedia.org/wiki/File:Bradley_Barcola_at_Liverpool_Signing_2026-2027_season.jpg",
 
     contenido: `
 
@@ -186,6 +251,10 @@ const noticias = [
   },
 
 
+  /* =========================================
+     6. FÚTBOL INTERNACIONAL
+  ========================================= */
+
   {
     id: "futbol-europeo",
 
@@ -200,7 +269,16 @@ const noticias = [
       "Las principales ligas europeas avanzan y los favoritos empiezan a enseñar sus cartas en el inicio de temporada.",
 
     imagen:
-      "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1400&q=85",
+      "https://commons.wikimedia.org/wiki/Special:Redirect/file/Champions_league_trophy.jpg",
+
+    autorImagen:
+      "Melon5541",
+
+    licencia:
+      "CC BY-SA 4.0",
+
+    fuenteImagen:
+      "https://commons.wikimedia.org/wiki/File:Champions_league_trophy.jpg",
 
     contenido: `
 
